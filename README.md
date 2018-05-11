@@ -17,7 +17,7 @@
 
 ## 什么是AutoLine开源平台
 
-AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFramework进行二次开发，支持RobotFramework几乎所有的库。
+AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFramework进行二次开发，支持RobotFramework几乎所有的库。
 
 ## 为什么要开发AutoLine
 
@@ -127,11 +127,11 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 调度管理
 ![调度管理](./app/static/images/demo/scheduler.png)
 
-查看任务
-![查看任务](./app/static/images/demo/task.png)
+查看任务
+![查看任务](./app/static/images/demo/task.png)
 
 测试报告
-![查看报告](./app/static/images/demo/report.png)
+![查看报告](./app/static/images/demo/report.png)
 
 ## 支持与联系
 
