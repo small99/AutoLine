@@ -145,7 +145,7 @@ email：lymking#foxmail.com
 
 ## 许可
 
-AutoLine基于MIT协议发布
+AutoLine基于Apache License 2.0协议发布
 
 ## 公众号
 
