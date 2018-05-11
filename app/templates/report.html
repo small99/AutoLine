@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/report.js') }}"></script>
+
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div style="margin: 8px 0;"></div>
+    <p>测试报告创建于 {{ summary["generated"] }} by<a href="http://weixin.sogou.com/weixin?type=1&s_from=input&query=%E5%BC%80%E6%BA%90%E4%BC%98%E6%B5%8B&ie=utf8&_sug_=n&_sug_type_="> AutoLine开源平台</a> v 1.0.0</p>
+    <h4>运行环境</h4>
+    <p>{{ summary["generator"] }}</p>
+    <table class="easyui-datagrid" title="概要信息" style="width:100%;height:78px"
+            data-options="collapsible:true">
+        <thead>
+            <tr>
+                <th data-options="field:'name',width:80">项目名称</th>
+                <th data-options="field:'build_no',width:50">任务号</th>
+                <th data-options="field:'starttime',width:160,align:'center'">开始时间</th>
+                <th data-options="field:'endtime',width:160,align:'center'">结束时间</th>
+                <th data-options="field:'status',width:50,align:'center'">结果</th>
+                <th data-options="field:'pass',width:40,align:'center'">通过</th>
+                <th data-options="field:'fail',width:40,align:'center'">失败</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ summary["name"] }}</td>
+                <td>#{{ summary["build_no"] }}</td>
+                <td>{{ summary["starttime"] }}</td>
+                <td>{{ summary["endtime"] }}</td>
+                <td>{{ summary["status"] }}</td>
+                <td>{{ summary["pass"] }}</td>
+                <td>{{ summary["fail"] }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="margin: 20px 0;"></div>
+    <table title="详细报告" class="easyui-treegrid" style="width:100%;height:550px"
+			data-options="
+				url: '/detail/{{ project_id }}/{{ build_no }}',
+				method: 'POST',
+				rownumbers: true,
+				collapsible:true
+			">
+		<thead>
+			<tr>
+                <th data-options="field:'status',align:'center',formatter:show_status_style">结果</th>
+				<th data-options="field:'name'">名称</th>
+                <th data-options="field:'keyword'">关键字</th>
+                <th data-options="field:'msg',formatter:show_log_style">详细操作</th>
+			</tr>
+		</thead>
+	</table>
+    <script>
+    </script>
+</body>
+</html>

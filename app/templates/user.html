@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/user.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div style="margin: 8px 0;"></div>
+	<table id="user_list" class="easyui-datagrid" title="用户列表" style="width:100%;height:auto;"
+			data-options="rownumbers: true,
+			    singleSelect: true,
+			    url: '/api/v1/user/',
+			    method: 'get',
+			    toolbar: toolbar,
+			    pagination: true,
+			    pageList: [10,20,30],
+				pageSize: 10">
+		<thead>
+			<tr>
+				<th data-options="field:'id',width:40">ID</th>
+                <th data-options="field:'用户名'">用户名</th>
+                <th data-options="field:'email'">邮件</th>
+				<!--<th data-options="field:'昵称'">昵称</th>-->
+				<th data-options="field:'role_id'" hidden>角色ID</th>
+				<th data-options="field:'角色',width:160">角色</th>
+                <th data-options="field:'最后在线时间'">最后在线时间</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="create_user_win" class="easyui-window" title="新增用户"
+         data-options="modal:true,closed:true,iconCls:'icon-add'"
+         style="width:500px;height:320px;padding:10px;">
+        <form id="create_user_fm" action="/api/v1/user/" method="post">
+			<div style="margin-bottom:20px">
+				<select id="role_id" name="role_id"
+						class="easyui-combobox" label="角色:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false,required:true"></select>
+			</div>
+            <div style="margin-bottom:20px">
+                <input id="username" name="username" class="easyui-textbox" label="用户名:" labelPosition="left" style="width:100%;height:32px;" data-options="required:true">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="email" name="email" class="easyui-textbox" label="email:" labelPosition="left" style="width:100%;height:32px;" data-options="validType:'email',required:true">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="password" name="password" class="easyui-textbox" type="password" label="密码:" labelPosition="left" style="width:100%;height:32px;" data-options="required:true">
+            </div>
+            <input hidden name="method" value="create">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_user('create_user_win', 'create_user_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="edit_user_win" class="easyui-window" title="编辑用户"
+         data-options="modal:true,closed:true,iconCls:'icon-edit'"
+         style="width:500px;height:320px;padding:10px;">
+        <form id="edit_user_fm" action="/api/v1/user/" method="post">
+			<div style="margin-bottom:20px">
+				<select id="role_id" name="role_id"
+						class="easyui-combobox" label="角色:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false,required:true"></select>
+			</div>
+            <div style="margin-bottom:20px">
+                <input id="username" name="username" class="easyui-textbox" label="用户名:" labelPosition="left" style="width:100%;height:32px;" data-options="required:true">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="email" name="email" class="easyui-textbox" label="email:" labelPosition="left" style="width:100%;height:32px;" data-options="validType:'email',required:true">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="password" name="password" class="easyui-textbox" type="password" label="密码:" labelPosition="left" style="width:100%;height:32px;" data-options="required:true">
+            </div>
+            <input hidden name="id" value="">
+            <input hidden name="method" value="edit">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_user('edit_user_win', 'edit_user_fm');">更新</a>
+            </div>
+        </form>
+    </div>
+    <div id="del_user_win" class="easyui-window" title="删除用户"
+         data-options="modal:true,closed:true,iconCls:'icon-remove'"
+         style="width:500px;height:320px;padding:10px;">
+        <form id="del_user_fm" action="/api/v1/user/" method="post">
+			<div style="margin-bottom:20px">
+				<select id="role_id" name="role_id"
+						class="easyui-combobox" label="角色:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false,required:true"></select>
+			</div>
+            <div style="margin-bottom:20px">
+                <input id="username" name="username" class="easyui-textbox" label="用户名:" labelPosition="left" style="width:100%;height:32px;" data-options="required:true">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="email" name="email" class="easyui-textbox" label="email:" labelPosition="left" style="width:100%;height:32px;" data-options="validType:'email',required:true">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="password" name="password" class="easyui-textbox" type="password" label="密码:" labelPosition="left" style="width:100%;height:32px;" data-options="required:true">
+            </div>
+            <input hidden name="id" value="">
+            <input hidden name="method" value="delete">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_user('del_user_win', 'del_user_fm');">删除</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+    	init_role_list();
+		var toolbar = [{
+			text:'创建',
+			iconCls:'icon-add',
+			handler:function(){
+			    open_win('create_user_win');
+			}
+		},{
+			text:'编辑',
+			iconCls:'icon-edit',
+			handler:function(){
+			    edit_user();
+			}
+		},'-',{
+			text:'删除',
+			iconCls:'icon-remove',
+			handler:function(){
+			    delete_user();
+			}
+		}];
+
+	</script>
+</body>
+</html>

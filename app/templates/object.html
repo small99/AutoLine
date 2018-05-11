@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/object.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div style="margin: 8px 0;"></div>
+	<table id="object_list" class="easyui-datagrid" title="对象集列表" style="width:100%;height:auto;"
+			data-options="rownumbers: true,
+			    singleSelect: true,
+			    url: '/api/v1/object/?project_id={{ id }}',
+			    method: 'get',
+			    toolbar: toolbar,
+			    pagination: true,
+			    pageList: [10,20,30],
+				pageSize: 10">
+		<thead>
+			<tr>
+				<th data-options="field:'id',width:40">ID</th>
+				<th data-options="field:'名称',width:160">名称</th>
+				<th data-options="field:'project_id'" hidden>项目ID</th>
+                <th data-options="field:'描述',width:200">描述</th>
+				<th data-options="field:'创建人'">创建人</th>
+				<th data-options="field:'创建日期'">创建日期</th>
+                <th data-options="field:'修改人'">修改人</th>
+				<th data-options="field:'修改日期'">修改日期</th>
+			</tr>
+		</thead>
+	</table>
+    <div id="object_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-object'"
+         style="width:500px;height:230px;padding:10px;">
+        <form id="object_fm" action="/api/v1/object/" method="post">
+            <div style="margin-bottom:20px">
+                <input name="name" id="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:64px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="category" id="category" value="object">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="project_id" id="project_id" value="{{ id }}">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_frame_object('object_win', 'object_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+
+		var toolbar = [{
+			text:'创建',
+			iconCls:'icon-add',
+			handler:function(){
+			    manage_object_table('object_win', 'object_fm', 'create');
+			}
+		},{
+			text:'编辑',
+			iconCls:'icon-edit',
+			handler:function(){
+			    manage_object_table('object_win', 'object_fm', 'edit');
+			}
+		},'-',{
+			text:'删除',
+			iconCls:'icon-remove',
+			handler:function(){
+			    manage_object_table('object_win', 'object_fm', 'delete');
+			}
+		}];
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/chart.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/object.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/suite.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/case.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/var.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/ui.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/stats.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 5px 0 0 0;
+       }
+       .top tab tr td{
+            padding: 10px;
+       }
+       .top table tr td span{
+            color: #ff9900;
+       }
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north'" class="top">
+        <table style="float:left">
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"/></td>
+                <td><span><b>AutoLine开源平台</b></span></td>
+                <td style="width:40px;"></td>
+                <td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-product'" onclick="addTab('产品管理', '/product', 'icon-product');">产品管理</a></td>
+                <td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-project'" onclick="addTab('项目管理', '/project', 'icon-project');">项目管理</a></td>
+                <td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-task'" onclick="addTab('调度管理', '/task_list', 'icon-task');">调度管理</a></td>
+                <td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-man'" onclick="addTab('系统设置', '/user', 'icon-man');">系统设置</a></td>
+            </tr>
+        </table>
+        <div style="float:right;padding-top:13px;padding-right:15px">
+            <a href="/logout" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">退出</a>
+        </div>
+    </div>
+    <div data-options="region:'west',split:true" style="width:320px;padding: 5px">
+        <div style="margin: 0 0;"></div>
+        <div style="margin-bottom:5px">
+            <select id="project_list" name="project_list"
+                    class="easyui-combobox" labelPosition="left" prompt="请选择项目..."
+                    style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false "></select>
+        </div>
+        <div style="margin: 5px 0;"></div>
+        <div class="easyui-panel" style="padding:5px;width:100%">
+            <ul id="project_tree" name="project_tree" class="easyui-tree"
+                data-options="
+                animate:true,
+                lines:true,
+                onContextMenu: onContextMenu,
+                onDblClick: onDblClick">
+                <li><span>项目操作</span></li>
+            </ul>
+        </div>
+    </div>
+    <div data-options="region:'center'" style="padding: 5px">
+
+        <div style="margin: 0 0;"></div>
+        <div id="editor_tabs" class="easyui-tabs" style="width:100%;">
+            <div title="开始" style="padding:10px" data-options="iconCls:'icon-editor'">
+                <h3>{{ user.name }} 欢迎你</h3>
+                <div style="float:left">
+                    <div id="p1" class="easyui-panel" title="项目统计"
+                         style="width:400px;height:320px;padding:10px;"
+                         data-options="
+                         collapsible:true,
+                         tools:[{
+                            iconCls:'icon-reload',
+                            handler:function(){
+                                project_stats('project_stats');
+                            }
+                            }]
+                        ">
+                        <canvas id="project_stats"></canvas>
+                    </div>
+                </div>
+                <!--
+                <div style="float:left;padding-left:10px;">
+                    <div id="p2" class="easyui-panel" title="任务统计"
+                         style="width:480px;height:320px;padding:10px;"
+                         data-options="
+                         collapsible:true,
+                         tools:[{
+                            iconCls:'icon-reload',
+                            handler:function(){
+                                task_stats('task_stats');
+                            }
+                            }]
+                         ">
+                        <canvas id="task_stats"></canvas>
+                    </div>
+                </div>-->
+                <div style="float:left;padding-left:10px;">
+                    <div id="p2" class="easyui-panel" title="任务统计"
+                         style="width:400px;height:320px;padding:10px;"
+                         data-options="
+                         collapsible:true,
+                         tools:[{
+                            iconCls:'icon-reload',
+                            handler:function(){
+                                exec_stats('exec_stats');
+                            }
+                            }]
+                         ">
+                        <canvas id="exec_stats"></canvas>
+                    </div>
+                </div>
+		    </div>
+
+        </div>
+    </div>
+
+    <div id="project_menu" class="easyui-menu" style="width:120px;">
+        <div onclick="addManageTab('查看任务', '/task', 'icon-task');" data-options="iconCls:'icon-task'">查看任务</div>
+		<div class="menu-sep"></div>
+         <div onclick="test_run('web');" data-options="iconCls:'icon-debug'">运行</div>
+        <!--<div onclick="test_run('web');" data-options="iconCls:'icon-web-run'">运行web项目</div>
+        <div onclick="test_run('app');" data-options="iconCls:'icon-app-run'">运行App项目</div>
+        <div onclick="test_run('http');" data-options="iconCls:'icon-http-run'">运行接口项目</div>-->
+        <div class="menu-sep"></div>
+        <div onclick="show_obj_win('object_win', 'object_fm', 'create');" data-options="iconCls:'icon-object'">创建对象集</div>
+        <div onclick="addManageTab('对象集管理', '/manage/object', 'icon-object');" data-options="iconCls:'icon-object'">管理对象集</div>
+        <div class="menu-sep"></div>
+        <div onclick="show_obj_win('suite_win', 'suite_fm', 'create');" data-options="iconCls:'icon-suite'">新建套件</div>
+        <div onclick="addManageTab('套件管理', '/manage/suite', 'icon-suite');" data-options="iconCls:'icon-suite'">管理套件</div>
+        <div class="menu-sep"></div>
+        <div onclick="expand()">展开</div>
+		<div onclick="collapse()">折叠</div>
+	</div>
+    <div id="object_menu" class="easyui-menu" style="width:120px;">
+        <div onclick="show_var_win('var_win', 'var_fm', 'create');" data-options="iconCls:'icon-var'">创建对象</div>
+        <div onclick="addManageTab('对象管理', '/manage/var', 'icon-var');" data-options="iconCls:'icon-var'">管理对象</div>
+		<div class="menu-sep"></div>
+		<div onclick="show_obj_win('object_win', 'object_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_obj_win('object_win', 'object_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
+        <div class="menu-sep"></div>
+        <div onclick="expand()">展开</div>
+		<div onclick="collapse()">折叠</div>
+	</div>
+    <div id="suite_menu" class="easyui-menu" style="width:120px;">
+        <div onclick="show_case_win('case_win', 'case_fm', 'create');" data-options="iconCls:'icon-case'">新增用例</div>
+        <div onclick="addManageTab('用例管理', '/manage/case', 'icon-case');" data-options="iconCls:'icon-case'">管理用例</div>
+		<div class="menu-sep"></div>
+		<div onclick="show_suite_win('suite_win', 'suite_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_suite_win('suite_win', 'suite_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
+        <div class="menu-sep"></div>
+        <div onclick="expand()">展开</div>
+		<div onclick="collapse()">折叠</div>
+	</div>
+    <div id="case_menu" class="easyui-menu" style="width:120px;">
+        <div onclick="show_ui_step_win('ui_step_win', 'ui_step_fm', 'create');" data-options="iconCls:'icon-step'">新增步骤</div>
+		<div onclick="addManageTab('用例步骤', '/manage/step', 'icon-step');" data-options="iconCls:'icon-step'">管理步骤</div>
+        <div class="menu-sep"></div>
+		<div onclick="show_case_win('case_win', 'case_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_case_win('case_win', 'case_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
+        <div class="menu-sep"></div>
+        <div onclick="expand()">展开</div>
+		<div onclick="collapse()">折叠</div>
+	</div>
+    <div id="step_menu" class="easyui-menu" style="width:120px;">
+		<div onclick="show_ui_step_win('ui_step_win', 'ui_step_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_ui_step_win('ui_step_win', 'ui_step_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
+	</div>
+    <div id="var_menu" class="easyui-menu" style="width:120px;">
+		<div onclick="show_var_win('var_win', 'var_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_var_win('var_win', 'var_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
+	</div>
+    <div id="object_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-object'"
+         style="width:500px;height:230px;padding:10px;">
+        <form id="object_fm" action="/api/v1/object/" method="post">
+            <div style="margin-bottom:20px">
+                <input name="name" id="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:64px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="category" id="category" value="object">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="project_id" id="project_id" value="-1">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_object('object_win', 'object_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="suite_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-suite'"
+         style="width:500px;height:230px;padding:10px;">
+        <form id="suite_fm" action="/api/v1/object/" method="post">
+            <div style="margin-bottom:20px">
+                <input name="name" id="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:64px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="category" id="category" value="suite">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="project_id" id="project_id" value="-1">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_suite('suite_win', 'suite_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="case_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-case'"
+         style="width:500px;height:230px;padding:10px;">
+        <form id="case_fm" action="/api/v1/object/" method="post">
+            <div style="margin-bottom:20px">
+                <input name="name" id="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:64px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="category" id="category" value="case">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="suite_id" id="suite_id" value="-1">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_case('case_win', 'case_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="var_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-var'"
+         style="width:500px;height:330px;padding:10px;">
+        <form id="var_fm" action="/api/v1/object/" method="post">
+
+            <div style="margin-bottom:20px">
+                <input name="name" id="name" class="easyui-textbox" label="对象名:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="value" id="value" class="easyui-textbox" label="对象值:" labelPosition="left" multiline="true"  style="width:100%;height:118px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="备注:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="category" id="category" value="var">
+            <input hidden name="object_id" id="object_id" value="-1">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_var('var_win', 'var_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="ui_step_win" class="easyui-window" title="创建UI自动化测试步骤"
+         data-options="modal:true,closed:true,iconCls:'icon-ui_step'"
+         style="width:500px;height:330px;padding:10px;">
+        <form id="ui_step_fm" action="/api/v1/object/" method="post">
+
+            <div style="margin-bottom:10px">
+               <input id="keyword" name="keyword" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        required: true,
+                        label:'关键字:',
+                        labelPosition:'left',
+                        onShowPanel: onShowKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_1" name="param_1" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数1:',
+                        labelPosition:'left',
+                        onShowPanel: onShowKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_2" name="param_2" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数2:',
+                        labelPosition:'left',
+                        onShowPanel: onShowKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_3" name="param_3" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数3:',
+                        labelPosition:'left',
+                        onShowPanel: onShowKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_4" name="param_4" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数4:',
+                        labelPosition:'left',
+                        onShowPanel: onShowKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="备注:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="case_id" id="case_id" value="-1">
+            <div style="text-align:center;margin-bottom:10px">
+                <a id="manage_step" href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_ui_step('ui_step_win', 'ui_step_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        init_project_list();
+        project_stats('project_stats');
+        //task_stats('task_stats');
+        exec_stats('exec_stats');
+    </script>
+</body>
+</html>

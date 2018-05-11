@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/ui.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div style="margin: 8px 0;"></div>
+	<table id="ui_step_list" class="easyui-datagrid" title="步骤列表" style="width:100%;height:auto;"
+			data-options="rownumbers: true,
+			    singleSelect: true,
+			    url: '/api/v1/step/?case_id={{ id }}',
+			    method: 'get',
+			    toolbar: toolbar,
+			    pagination: true,
+			    pageList: [10,20,30],
+				pageSize: 10">
+		<thead>
+			<tr>
+				<th data-options="field:'id',width:40">ID</th>
+				<th data-options="field:'关键字'">关键字</th>
+				<th data-options="field:'case_id'" hidden>用例ID</th>
+                <th data-options="field:'参数1'">参数1</th>
+                <th data-options="field:'参数2'">参数2</th>
+                <th data-options="field:'参数3'">参数3</th>
+                <th data-options="field:'参数4'">参数4</th>
+                <th data-options="field:'备注'">备注</th>
+				<th data-options="field:'创建人'">创建人</th>
+				<th data-options="field:'创建日期'">创建日期</th>
+                <th data-options="field:'修改人'">修改人</th>
+				<th data-options="field:'修改日期'">修改日期</th>
+			</tr>
+		</thead>
+	</table>
+    <div id="ui_step_win" class="easyui-window" title="创建UI自动化测试步骤"
+         data-options="modal:true,closed:true,iconCls:'icon-ui_step'"
+         style="width:500px;height:330px;padding:10px;">
+        <form id="ui_step_fm" action="/api/v1/step/" method="post">
+
+            <div style="margin-bottom:10px">
+               <input id="keyword" name="keyword" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        required: true,
+                        label:'关键字:',
+                        labelPosition:'left',
+                        onShowPanel: onShowFrameKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_1" name="param_1" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数1:',
+                        labelPosition:'left',
+                        onShowPanel: onShowFrameKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_2" name="param_2" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数2:',
+                        labelPosition:'left',
+                        onShowPanel: onShowFrameKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_3" name="param_3" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数3:',
+                        labelPosition:'left',
+                        onShowPanel: onShowFrameKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:5px">
+                <input id="param_4" name="param_4" class="easyui-combotree"
+                      data-options="
+                        animate:true,
+                        lines:true,
+                        editable: true,
+                        label:'参数4:',
+                        labelPosition:'left',
+                        onShowPanel: onShowFrameKeywordPanel"
+                      style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="备注:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="case_id" id="case_id" value="{{ id }}">
+            <div style="text-align:center;margin-bottom:10px">
+                <a id="manage_step" href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_frame_ui_step('ui_step_win', 'ui_step_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+
+		var toolbar = [{
+			text:'创建',
+			iconCls:'icon-add',
+			handler:function(){
+			    manage_ui_step_table('ui_step_win', 'ui_step_fm', 'create');
+			}
+		},{
+			text:'编辑',
+			iconCls:'icon-edit',
+			handler:function(){
+			    manage_ui_step_table('ui_step_win', 'ui_step_fm', 'edit');
+			}
+		},'-',{
+			text:'删除',
+			iconCls:'icon-remove',
+			handler:function(){
+			    manage_ui_step_table('ui_step_win', 'ui_step_fm', 'delete');
+			}
+		}];
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/project.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div style="margin: 8px 0;"></div>
+	<table id="project_list" class="easyui-datagrid" title="项目列表" style="width:100%;height:auto;"
+			data-options="rownumbers: true,
+			    singleSelect: true,
+			    url: '/api/v1/project/',
+			    method: 'get',
+			    toolbar: toolbar,
+			    pagination: true,
+			    pageList: [10,20,30],
+				pageSize: 10">
+		<thead>
+			<tr>
+				<th data-options="field:'id',width:40">ID</th>
+				<th data-options="field:'名称',width:160">名称</th>
+                <!--<th data-options="field:'分类'">分类</th>-->
+				<th data-options="field:'product_id'" hidden>产品ID</th>
+				<th data-options="field:'所属产品',width:160">所属产品</th>
+				<th data-options="field:'描述',width:200">描述</th>
+				<th data-options="field:'cron'">Cron Trigger</th>
+				<th data-options="field:'创建人'">创建人</th>
+				<th data-options="field:'创建日期'">创建日期</th>
+                <th data-options="field:'修改人'">修改人</th>
+				<th data-options="field:'修改日期'">修改日期</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="create_project_win" class="easyui-window" title="创建项目"
+         data-options="modal:true,closed:true,iconCls:'icon-add'"
+         style="width:500px;height:320px;padding:10px;">
+        <form id="create_project_fm" action="/api/v1/project/" method="post">
+
+            <!--<div style="margin-bottom:20px">
+				<select id="category" name="category"
+						class="easyui-combobox" label="项目类型:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="editable:false ">
+                    <option value="web">Web</option>
+                    <option value="app">App</option>
+                    <option value="http">http</option>
+                </select>
+			</div>
+			-->
+			<div style="margin-bottom:20px">
+				<select id="product_id" name="product_id"
+						class="easyui-combobox" label="所属产品:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false "></select>
+			</div>
+            <div style="margin-bottom:20px">
+                <input name="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:48px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="cron" class="easyui-textbox" label="cron:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <input hidden name="method" value="create">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_project('create_project_win', 'create_project_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="edit_project_win" class="easyui-window" title="编辑项目"
+         data-options="modal:true,closed:true,iconCls:'icon-edit'"
+         style="width:500px;height:320px;padding:10px;">
+        <form id="edit_project_fm" action="/api/v1/project/" method="post">
+            <!--<div style="margin-bottom:20px">
+				<select id="category" name="category"
+						class="easyui-combobox" label="项目类型:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="editable:false ">
+                    <option value="web">Web</option>
+                    <option value="app">App</option>
+                    <option value="http">http</option>
+                </select>
+			</div>-->
+			<div style="margin-bottom:20px">
+				<select id="product_id" name="product_id"
+						class="easyui-combobox" label="所属产品:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false "></select>
+			</div>
+            <div style="margin-bottom:20px">
+                <input id="name" name="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="desc" name="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:48px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="cron" id="cron" class="easyui-textbox" label="cron:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <input hidden name="id" value="">
+            <input hidden name="method" value="edit">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_project('edit_project_win', 'edit_project_fm');">更新</a>
+            </div>
+        </form>
+    </div>
+    <div id="del_project_win" class="easyui-window" title="删除项目"
+         data-options="modal:true,closed:true,iconCls:'icon-remove'"
+         style="width:500px;height:320px;padding:10px;">
+        <form id="del_project_fm" action="/api/v1/project/" method="post">
+            <!--<div style="margin-bottom:20px">
+				<select id="category" name="category"
+						class="easyui-combobox" label="项目类型:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="editable:false ">
+                    <option value="web">Web</option>
+                    <option value="app">App</option>
+                    <option value="http">http</option>
+                </select>
+			</div>-->
+			<div style="margin-bottom:20px">
+				<select id="product_id" name="product_id"
+						class="easyui-combobox" label="所属产品:" labelPosition="left"
+						style="width:100%;height:32px;" data-options="valueField:'id', textField:'名称',editable:false "></select>
+			</div>
+            <div style="margin-bottom:20px">
+                <input id="name" name="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input id="desc" name="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:48px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="cron" id="cron" class="easyui-textbox" label="cron:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <input hidden name="id" value="">
+            <input hidden name="method" value="delete">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_project('del_project_win', 'del_project_fm');">删除</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+    	init_product_list();
+		var toolbar = [{
+			text:'创建',
+			iconCls:'icon-add',
+			handler:function(){
+			    open_win('create_project_win');
+			}
+		},{
+			text:'编辑',
+			iconCls:'icon-edit',
+			handler:function(){
+			    edit_project();
+			}
+		},'-',{
+			text:'删除',
+			iconCls:'icon-remove',
+			handler:function(){
+			    delete_project();
+			}
+		}];
+
+	</script>
+</body>
+</html>

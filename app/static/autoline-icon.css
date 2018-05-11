@@ -1,0 +1,51 @@
+.icon-editor{
+	background:url('images/editor.png') no-repeat center center;
+}
+.icon-product{
+	background:url('images/product.png') no-repeat center center;
+}
+.icon-project{
+	background:url('images/project.png') no-repeat center center;
+}
+.icon-task{
+	background:url('images/task.png') no-repeat center center;
+}
+.icon-suite{
+	background:url('images/suite.png') no-repeat center center;
+}
+.icon-object{
+	background:url('images/obj.png') no-repeat center center;
+}
+.icon-case{
+	background:url('images/case.png') no-repeat center center;
+}
+.icon-step{
+	background:url('images/step.png') no-repeat center center;
+}
+.icon-var{
+	background:url('images/var.png') no-repeat center center;
+}
+.icon-debug{
+	background:url('images/debug.png') no-repeat center center;
+}
+.icon-web-run{
+	background:url('images/web_run.png') no-repeat center center;
+}
+.icon-app-run{
+	background:url('images/app_run.png') no-repeat center center;
+}
+.icon-http-run{
+	background:url('images/http_run.png') no-repeat center center;
+}
+.icon-run{
+	background:url('images/run.gif') no-repeat center center;
+}
+.icon-success{
+	background:url('images/success.png') no-repeat center center;
+}
+.icon-fail{
+	background:url('images/fail.png') no-repeat center center;
+}
+.icon-report{
+	background:url('images/report.png') no-repeat center center;
+}

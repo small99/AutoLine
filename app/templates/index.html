@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/default/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+       .bottom{
+            position: relative;
+            bottom: -300px;
+            margin:auto;
+            padding:5px;
+            height:60px;
+            font-size: 12px;
+       }
+       .bottom table{
+            margin: 10px 0 0 0;
+            color: #888888;
+
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north';border:false;" class="top">
+        <table>
+            <tr>
+                <td><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"/></td>
+                <td><span>AutoLine开源平台</span></td>
+            </tr>
+        </table>
+    </div>
+    <div data-options="region:'center';border:false;">
+        <div style="height:200px;"></div>
+        <div class="easyui-panel" style="width:400px;height:100%;padding:30px 30px;margin:0 auto;background-image: url({{ url_for('static', filename='images/background.png') }});">
+            <form id="login_fm"  method="post" style="color: #fff;">
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox" name="email" style="width:100%"
+                           data-options="label:'Email:',iconCls:'icon-man',iconWidth:38,required:true,validType:'email'">
+                </div>
+                <div style="margin-bottom:20px">
+                    <input class="easyui-textbox" name="password" type="password" style="width:100%;"
+                           data-options="label:'密码:',iconCls:'icon-lock',iconWidth:38">
+                </div>
+                    <input type="hidden" name="method" value="login"/>
+            </form>
+            <div style="text-align:right;padding:5px 0">
+                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()"
+                   style="width:80px">登录</a>
+            </div>
+        </div>
+        <div data-options="region:'south';border:false;" class="bottom">
+            <table>
+                <tr>
+                    <td><b>友情链接：</b></td>
+                    <td><a href="http://weixin.sogou.com/weixin?type=1&s_from=input&query=%E5%BC%80%E6%BA%90%E4%BC%98%E6%B5%8B&ie=utf8&_sug_=n&_sug_type_="> 开源优测</a></td>
+                    <td><a href="http://docs.jinkan.org/docs/flask/"> Flask</a></td>
+                    <td><a href="http://www.jeasyui.com/index.php"> EasyUI</a></td>
+                    <td><a href="http://robotframework.org/"> RobotFramework</a></td>
+                    <td><a href="http://www.sqlalchemy.org/"> SQLAlchemy</a></td>
+                    <td><a href="http://www.python-requests.org/en/master/"> Requests</a></td>
+                    <td><a href="https://chartjs.bootcss.com/"> Chartjs</a></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function submitForm(){
+            $('#login_fm').form('submit',{
+                url: "/api/v1/auth/",
+                type: "post",
+                success:function(data){
+                    var obj = JSON.parse(data);
+                    if(obj.status == "success"){
+                        location.href = obj.url;
+                    }
+                    else{
+                        alert(obj.msg);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoLine自动化测试管理平台 | 开源优测</title>
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/bootstrap/easyui.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='themes/icon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autoline-icon.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.easyui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
+	<!--<script type="text/javascript" src="{{ url_for('static', filename='js/project.js') }}"></script>-->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/task.js') }}"></script>
+    <style>
+        .top{
+            margin:auto;
+            padding:5px;
+            height:60px;
+            background-image: url({{ url_for('static', filename='images/background.png') }});
+        }
+       .top table{
+            margin: 10px 0 0 0;
+            color: #ff9900;
+       }
+
+       .login {
+            margin:0 auto;
+       }
+
+
+    </style>
+</head>
+<body class="easyui-layout">
+    <div style="margin: 8px 0;"></div>
+	<table id="task_list" class="easyui-datagrid" title="任务列表" style="width:100%;height:auto;"
+			data-options="rownumbers: true,
+			    singleSelect: true,
+			    url: '/api/v1/trigger/',
+			    method: 'get',
+			    toolbar: toolbar,
+			    pagination: true,
+			    pageList: [10,20,30],
+				pageSize: 20">
+		<thead>
+			<tr>
+				<th data-options="field:'status', formatter:showImg">状态</th>
+				<th data-options="field:'id',width:30,align:'center' , halign: 'center'">id</th>
+				<th data-options="field:'name',align:'left' , halign: 'center'">名称</th>
+				<th data-options="field:'next_run_time',width:150, halign: 'center'">下次运行时间</th>
+				<th data-options="field:'cron',width: 120,align:'center' , halign: 'center'">Cron Trigger</th>
+				<th data-options="field:'report',width: 80,align:'center' , halign: 'center', formatter:view_task"> 查看任务 </th>
+				<!--<th data-options="field:'mange',width: 80,align:'center' , halign: 'center', formatter:manage_task"> 操作 </th>-->
+
+			</tr>
+		</thead>
+	</table>
+	<script type="text/javascript">
+		var toolbar = [{
+			text:'刷新',
+			iconCls:'icon-reload',
+			handler:function(){
+				$("#task_list").datagrid('reload');
+			}
+		}];
+
+		// 定时刷新结果
+		setInterval(function(){ $("#task_list").datagrid('reload'); }, 5000);
+
+	</script>
+	</body>
+</html>
