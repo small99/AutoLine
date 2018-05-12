@@ -27,7 +27,7 @@ class Config:
                 os.environ[var[0]] = var[1]
                 #print(var[0] + "=" + var[1])
 
-    SECRET_KEY = os.environ.get('SECRET_KEY') or random.choices(choice, k=16)
+    SECRET_KEY = os.environ.get('SECRET_KEY')# or random.choices(choice, k=16)
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.126.com')
     MAIL_PORT = int(os.environ.get('MAIL_PORT', '587'))
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1']
