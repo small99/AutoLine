@@ -32,7 +32,7 @@ class Trigger:
         self.scheduler = BackgroundScheduler({
             'apscheduler.jobstores.default': {
                 'type': 'sqlalchemy',
-                'url': os.environ.get('TRIGGER_DATABASE_URL')
+                'url': self.app.config["TRIGGER_DATABASE_URL"] #os.environ.get('TRIGGER_DATABASE_URL')
             },
             'apscheduler.executors.processpool': {
                 'type': 'processpool',
