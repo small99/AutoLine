@@ -204,6 +204,6 @@ AutoLine基于Apache License 2.0协议发布
 
 ## 公众号
 
-扫一扫关注我的公众号：
+扫一扫关注我的公众号，获取第一手文档资料：
 
 ![开源优测](./app/static/images/deeptest.jpg)
