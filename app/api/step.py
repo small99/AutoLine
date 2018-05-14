@@ -69,7 +69,7 @@ class Step(Resource):
     def post(self):
         args = self.parser.parse_args()
         import json
-        print(json.dumps(args))
+        #print(json.dumps(args))
 
         method = args["method"].lower()
         if method == "create":
@@ -144,6 +144,7 @@ class Step(Resource):
 
         return result
 
+    """
     def __query(self, args):
         data = {"data": []}
         if args["id"] == -1:
@@ -179,6 +180,8 @@ class Step(Resource):
 
 
         return data
+    """
+
 
     def __delete(self, args):
         result = {"status": "success",
