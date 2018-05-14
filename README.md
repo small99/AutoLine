@@ -10,6 +10,7 @@
     - [AutoLine下载及安装依赖](#autoline下载及安装依赖)
     - [配置](#配置)
     - [如何运行](#如何运行)
+    - [外网访问运行方式](#外网访问运行方式)
     - [如何支持不同的浏览器](#如何支持不同的浏览器)
     - [一些截图](#一些截图)
     - [支持与联系](#支持与联系)
@@ -133,6 +134,20 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 三. 运行
 
 > python manage.py runserver
+
+打开浏览器访问：http://127.0.0.1:5000即可
+
+## 外网访问运行方式
+
+使用下面的命令即可
+
+> python manage.py runserver -h 0.0.0.0 -p 8000
+
+-h 指定ip（ip指定为0.0.0.0即可自定绑定本机IP）    
+
+-p 指定端口号
+
+这时你就可以用在其他机器通过： http://ip:端口     来访问平台了
 
 ![首页](./app/static/images/demo/index.png)
 
