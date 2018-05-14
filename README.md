@@ -51,6 +51,18 @@ AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFram
 
 ## 安装
 
+先安装mysql数据库，使用utf-8字符编码新增autoline数据库
+
+修改.env中关于数据库的配置，主要是：
+
+```
+DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
+TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
+```
+
+把上述两个配置中root:12345改为你的mysql的账户和密码
+把127.0.0.1改为你的mysql的服务器地址即可
+
 下载AutoLine工程, 在AutoLine根目录下有requirements.txt文件，该文件包含了所有依赖的包，安装好Python3并确保Python3的pip可用，使用以下命令安装AutoLinie依赖库
 
 > pip install -r requirements.txt
@@ -79,9 +91,6 @@ FLASKY_MAIL_SENDER=AutoLine Admin <autoline@126.com>
 
 # 默认admin账号, 默认密码123456
 FLASKY_ADMIN=autoline@126.com
-
-# 开发环境数据库连接字符串
-DEV_DATABASE_URL=sqlite:///../AutoLine-dev.sqlite
 
 # 生产环境数据库连接字符串
 DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
