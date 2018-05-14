@@ -9,7 +9,7 @@
     - [Mysql安装与配置](#mysql安装与配置)
     - [AutoLine下载及安装依赖](#autoline下载及安装依赖)
     - [配置文件说明](#配置文件说明)
-    - [如何运行](#如何运行)
+    - [初始化及运行](#初始化及运行)
     - [外网访问运行方式](#外网访问运行方式)
     - [如何支持不同的浏览器](#如何支持不同的浏览器)
     - [截图](#截图)
@@ -115,7 +115,7 @@ DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 ```
 
-## 如何运行
+## 初始化及运行
 
 在配置好上述配置后如何运行AutoLine？
 
