@@ -49,7 +49,7 @@ AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFram
 
 等等其他及上述技术相关的插件或技术包
 
-## 安装
+## Mysql安装
 
 先安装mysql数据库，使用utf-8字符编码新增autoline数据库
 
@@ -62,6 +62,8 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 
 把上述两个配置中root:12345改为你的mysql的账户和密码
 把127.0.0.1改为你的mysql的服务器地址即可
+
+## AutoLine下载及安装依赖
 
 下载AutoLine工程, 在AutoLine根目录下有requirements.txt文件，该文件包含了所有依赖的包，安装好Python3并确保Python3的pip可用，使用以下命令安装AutoLinie依赖库
 
