@@ -11,6 +11,7 @@ Email: lymking@foxmail.com
 """
 
 import os
+import sys
 from app import create_app, db
 from app.utils.trigger import Trigger
 from app.models import User, Role
@@ -20,9 +21,6 @@ from flask_migrate import Migrate, MigrateCommand
 os.environ["PATH"] = os.environ["PATH"] + ";" + os.getcwd() + "/bin"
 
 app = create_app(os.environ.get('AUTOBEAT_CONFIG') or 'default')
-app.config["TRIGGER"] = Trigger(app)
-app.config["TRIGGER"].setup()
-app.config["TRIGGER"].load_job_list()
 #trigger = Trigger(app)
 #trigger.setup()
 #trigger.load_job_list()
@@ -69,7 +67,10 @@ def keyword():
 
 
 if __name__ == '__main__':
-
-    app.config["TRIGGER"].start()
+    if "runserver" in sys.argv:
+        app.config["TRIGGER"] = Trigger(app)
+        app.config["TRIGGER"].setup()
+        app.config["TRIGGER"].load_job_list()
+        app.config["TRIGGER"].start()
 
     manager.run()

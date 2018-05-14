@@ -59,7 +59,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') #or 'sqlite:///' + os.path.join(basedir, 'AutoLine-dev.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'AutoLine-dev.sqlite') #os.environ.get('DEV_DATABASE_URL')
 
 
 class ProductionConfig(Config):
