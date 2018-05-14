@@ -61,7 +61,7 @@ class Trigger:
             for p in projects:
                 if self.scheduler.get_job(p.id) is None:
                     cron = p.cron.replace("\n", "").strip().split(" ")
-                    print(cron)
+                    #print(cron)
                     if len(cron) < 5:
                         continue
                     j = self.scheduler.add_job(func=run_job, trigger='cron', name=p.name, replace_existing=True,
