@@ -6,13 +6,13 @@
     - [为什么要开发AutoLine](#为什么要开发autoline)
     - [特色](#特色)
     - [采用了哪些开源技术/框架](#采用了哪些开源技术框架)
-    - [Mysql安装](#mysql安装)
+    - [Mysql安装与配置](#mysql安装与配置)
     - [AutoLine下载及安装依赖](#autoline下载及安装依赖)
-    - [配置](#配置)
+    - [配置文件说明](#配置文件说明)
     - [如何运行](#如何运行)
     - [外网访问运行方式](#外网访问运行方式)
     - [如何支持不同的浏览器](#如何支持不同的浏览器)
-    - [一些截图](#一些截图)
+    - [截图](#截图)
     - [支持与联系](#支持与联系)
     - [许可](#许可)
     - [公众号](#公众号)
@@ -63,7 +63,7 @@ AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFram
 
 等等其他及上述技术相关的插件或技术包
 
-## Mysql安装
+## Mysql安装与配置
 
 先安装mysql数据库，使用utf-8字符编码新增autoline数据库
 
@@ -85,7 +85,7 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 
 等待安装完成
 
-## 配置
+## 配置文件说明
 在AutoLine目录下的.env为所有关键的配置项
 
 ```INI
@@ -108,7 +108,7 @@ FLASKY_MAIL_SENDER=AutoLine Admin <autoline@126.com>
 # 默认admin账号, 默认密码123456
 FLASKY_ADMIN=autoline@126.com
 
-# 生产环境数据库连接字符串
+# 数据库连接字符串
 DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 
 # 调度连接字符串
@@ -131,7 +131,7 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 
 > python manage.py deploy
 
-三. 运行
+三. 内网运行方式
 
 > python manage.py runserver
 
@@ -171,7 +171,7 @@ PhantomJS驱动：http://phantomjs.org/releases.html
 
 HtmlUnit驱动：https://sourceforge.net/projects/htmlunit/files/htmlunit/
 
-## 一些截图
+## 截图
 
 产品管理
 ![产品管理](./app/static/images/demo/product.png)
