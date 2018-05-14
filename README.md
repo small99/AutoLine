@@ -10,6 +10,7 @@
     - [AutoLine下载及安装依赖](#autoline下载及安装依赖)
     - [配置](#配置)
     - [如何运行](#如何运行)
+    - [如何支持不同的浏览器](#如何支持不同的浏览器)
     - [一些截图](#一些截图)
     - [支持与联系](#支持与联系)
     - [许可](#许可)
@@ -138,6 +139,22 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 使用默认账号： autoline@126.com/123456 登录如图：
 
 ![start](./app/static/images/demo/start.png)  
+
+## 如何支持不同的浏览器
+
+下载最新的各浏览器对应的最新驱动，放在bin目录下即可
+
+firefox驱动：https://github.com/mozilla/geckodriver/releases
+
+chrome驱动：https://chromedriver.storage.googleapis.com/index.html
+
+Microsofe Edge驱动：https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+
+Safari驱动：https://webkit.org/blog/6900/webdriver-support-in-safari-10/
+
+PhantomJS驱动：http://phantomjs.org/releases.html
+
+HtmlUnit驱动：https://sourceforge.net/projects/htmlunit/files/htmlunit/
 
 ## 一些截图
 
