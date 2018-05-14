@@ -28,6 +28,16 @@ AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFram
 
 3. 业余写写，练习下敲代码的速度
 
+## 特色
+
+1. 支持Mac、Linux、windows平台
+
+2. 支持Chrome、IE、Edge、Firefox、Safari、HtmlUnitDriver、PhantomJS、Appium、Requests HTTP
+
+3. 支持与selenium-grid集成做分布式测试
+
+等等
+
 ## 采用了哪些开源技术/框架
 
 1. Python3
