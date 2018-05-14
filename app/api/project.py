@@ -273,7 +273,7 @@ class Project(Resource):
         children = []
         steps = AutoStep.query.filter_by(case_id=id).order_by(AutoStep.id.asc()).all()
         for step in steps:
-            print(step.keyword)
+            #print(step.keyword)
             children.append({
                 "id": step.id,
                 "text": step.keyword.split(".")[1],
