@@ -4,6 +4,7 @@
 - [AutoLine开源平台](#autoline开源平台)
     - [什么是AutoLine开源平台](#什么是autoline开源平台)
     - [为什么要开发AutoLine](#为什么要开发autoline)
+    - [特色](#特色)
     - [采用了哪些开源技术/框架](#采用了哪些开源技术框架)
     - [Mysql安装](#mysql安装)
     - [AutoLine下载及安装依赖](#autoline下载及安装依赖)
