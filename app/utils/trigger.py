@@ -108,6 +108,9 @@ class Trigger:
         for job in jobs:
             status = "running"
             task = AutoTask.query.filter_by(project_id=job.id).order_by(AutoTask.build_no.desc()).first()
+            if task is None:
+                continue
+
             output_dir = os.getcwd() + "/logs/%s/%s" % (task.project_id, task.build_no)
             if os.path.exists(output_dir + "/report.html"):
                 tree = ET.parse(output_dir + "/output.xml")
@@ -119,14 +122,13 @@ class Trigger:
                 else:
                     status = 'pass'
 
-            data["rows"].append({
-                "id": job.id,
-                "name": job.name,
-                "status": status,
-                "url": url_for('static', filename='images/%s' % urls[status]),
-                "cron": AutoProject.query.filter_by(id=job.id).first().cron,
-                "next_run_time": job.next_run_time.astimezone(to_zone).strftime("%Y-%m-%d %H:%M:%S")
-            })
+            data["rows"].append({"id": "%s" % job.id,
+                                 "name": job.name,
+                                 "status": status,
+                                 "url": url_for('static', filename='images/%s' % urls[status]),
+                                 "cron": AutoProject.query.filter_by(id=job.id).first().cron,
+                                 "next_run_time": job.next_run_time.astimezone(to_zone).strftime("%Y-%m-%d %H:%M:%S")
+                                 })
 
         return data
 
