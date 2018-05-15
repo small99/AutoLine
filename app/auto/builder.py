@@ -15,7 +15,7 @@ from datetime import datetime
 from flask import current_app
 from flask_login import current_user
 from sqlalchemy import and_
-from robot.api import TestSuiteBuilder, TestSuite, ResultWriter, TestData, TestCaseFile, ResourceFile
+#from robot.api import TestSuiteBuilder, TestSuite, ResultWriter, TestData, TestCaseFile, ResourceFile
 from .. import db
 from ..models import AutoProject, AutoSuite, AutoObject, AutoCase, AutoStep, AutoVar, AutoTask
 
@@ -125,6 +125,8 @@ class Builder:
 
         case_file.close()
 
+
+    """
     def test_run(self, app, user_id):
         with app.app_context():
             try:
@@ -163,4 +165,4 @@ class Builder:
                 return str(e)
 
         return None
-
+    """
