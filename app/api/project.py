@@ -276,7 +276,7 @@ class Project(Resource):
             #print(step.keyword)
             children.append({
                 "id": step.id,
-                "text": step.keyword.split(".")[1],
+                "text": step.keyword, #.split(".")[1],
                 "iconCls": "icon-step",
                 "attributes": {
                     "keyword": step.keyword,

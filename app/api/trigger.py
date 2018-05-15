@@ -30,6 +30,7 @@ class Triggers(Resource):
         self.parser.add_argument('rows', type=int, default=15)
 
     def get(self):
+
         app = current_app._get_current_object()
 
         return app.config["TRIGGER"].get_jobs()
