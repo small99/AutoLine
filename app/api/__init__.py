@@ -45,6 +45,9 @@ api.add_resource(Var, "/var/")
 from .keyword import Keyword
 api.add_resource(Keyword, "/keyword/")
 
+from .help import Help
+api.add_resource(Help, "/help/")
+
 from .task import Task
 api.add_resource(Task, "/task/")
 

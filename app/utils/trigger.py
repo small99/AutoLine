@@ -76,13 +76,15 @@ class Trigger:
                 return False
 
             if self.scheduler.get_job(id) is None:
-                self.scheduler.add_job(func=run_job, trigger='cron', name=p.name, eplace_existing=True,
+                self.scheduler.add_job(func=run_job, trigger='cron', name=p.name,
                                        minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
                                        id="%s" % id, args=(id,))
             else:
-                self.scheduler.modify_job(job_id="%s" % id, name=p.name, eplace_existing=True,
-                                          minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
-                                          args=(id,))
+                self.remove_job(id)
+
+                self.scheduler.add_job(func=run_job, trigger='cron', name=p.name,
+                                       minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
+                                       id="%s" % id, args=(id,))
 
             return True
 

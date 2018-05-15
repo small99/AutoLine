@@ -44,6 +44,11 @@ def user():
 
 
 @login_required
+@main.route('/help', methods=['GET'])
+def help():
+    return render_template('help.html')
+
+@login_required
 @main.route('/product', methods=['GET'])
 def product():
     return render_template('product.html', user=current_user)

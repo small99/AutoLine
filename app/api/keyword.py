@@ -20,6 +20,7 @@ from ..models import AutoProduct, AutoProject, AutoSuite, AutoObject, AutoCase, 
 from .. import db
 from ..utils.parsing import parser
 
+
 class Keyword(Resource):
     def __init__(self):
         self.parser = reqparse.RequestParser()

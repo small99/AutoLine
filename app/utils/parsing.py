@@ -53,3 +53,48 @@ def parser():
         })
 
     return keyword_list
+
+
+def parser_doc():
+    keyword_doc = []
+    cwd = os.getcwd() + "/doc"
+    keys = os.listdir(cwd)
+    for k in keys:
+        path = cwd + '/%s' % k
+        tree = ET.parse(path)
+        root = tree.getroot()
+        name = root.attrib["name"]
+
+        children = []
+        for kw in root.iter("kw"):
+            # 关键字参数
+            params = []
+            for arg in kw.iter("arg"):
+                params.append(arg.text)
+
+            k_params = " <br/> ".join(params)
+
+            # 使用说明
+            doc = ""
+            text = kw.find("doc").text
+            if text is not None:
+                doc = text.replace("\n", "<br/>")
+
+            children.append({
+                "id": name + "." + kw.attrib["name"],
+                "iconCls": "icon-blank",
+                "name": kw.attrib["name"],
+                "params": k_params,
+                "doc": doc
+            })
+
+        keyword_doc.append({
+            "id": name,
+            "state": "closed",
+            "name": name,
+            "params": "",
+            "doc": "",
+            "children": children
+        })
+
+    return keyword_doc
