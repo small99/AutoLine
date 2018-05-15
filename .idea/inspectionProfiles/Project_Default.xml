@@ -1,0 +1,28 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="SQLAlchemy" />
+            <item index="1" class="java.lang.String" itemvalue="robotframework" />
+            <item index="2" class="java.lang.String" itemvalue="robotframework-seleniumlibrary" />
+            <item index="3" class="java.lang.String" itemvalue="APScheduler" />
+            <item index="4" class="java.lang.String" itemvalue="Flask_Script" />
+            <item index="5" class="java.lang.String" itemvalue="robotframework-appiumlibrary" />
+            <item index="6" class="java.lang.String" itemvalue="Flask_SQLAlchemy" />
+            <item index="7" class="java.lang.String" itemvalue="pymysql" />
+            <item index="8" class="java.lang.String" itemvalue="Flask_RESTful" />
+            <item index="9" class="java.lang.String" itemvalue="bleach" />
+            <item index="10" class="java.lang.String" itemvalue="python_dateutil" />
+            <item index="11" class="java.lang.String" itemvalue="robotframework-requests" />
+            <item index="12" class="java.lang.String" itemvalue="Flask_Migrate" />
+            <item index="13" class="java.lang.String" itemvalue="Markdown" />
+            <item index="14" class="java.lang.String" itemvalue="Flask" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

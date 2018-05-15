@@ -188,6 +188,9 @@ HtmlUnit驱动：https://sourceforge.net/projects/htmlunit/files/htmlunit/
 测试报告
 ![查看报告](./app/static/images/demo/report.png)
 
+关键字帮助文档
+![帮助手册](./app/static/images/demo/help.png)
+
 ## 支持与联系
 
 公众号：开源优测  
