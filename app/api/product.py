@@ -73,7 +73,7 @@ class Product(Resource):
     def __create(self, args):
         result = {"status": "success",
                   "msg": "操作成功"}
-        print(args)
+        #print(args)
 
         product = AutoProduct.query.filter_by(name=args["name"]).first()
         if product is None:

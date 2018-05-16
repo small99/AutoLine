@@ -50,11 +50,13 @@ class Task(Resource):
             "fail": "fail.png",
             "running": "run.gif"
                 }
+
         for task in tasks:
+            status = self.__check_task_status(task.project_id, task.build_no)
             data["rows"].append({
                 "id": task.id,
-                "status": self.__check_task_status(task.project_id, task.build_no),
-                "url": url_for('static', filename='images/%s' % urls[task.status]),
+                "status": status,
+                "url": url_for('static', filename='images/%s' % urls[status]),
                 "name": AutoProject.query.filter_by(id=task.project_id).first().name,
                 "build_no": task.build_no,
                 "project_id": task.project_id,
@@ -91,8 +93,10 @@ class Task(Resource):
             task.create_timestamp = starttime
             task.end_timestamp = endtime
             task.duration = (endtime - starttime).seconds
+            task.status = status
 
             db.session.merge(task)
             db.session.commit()
 
         return status
+

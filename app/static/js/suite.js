@@ -20,7 +20,7 @@ function show_suite_win(win_id, fm_id, method){
     var button = {"create": "创建", "edit": "更新", "delete": "删除"};
     var selected = $('#project_tree').tree("getSelected");
     if(method == "create"){
-        $('#{0}'.lym_format(win_id)).window({"title": "创建对象集"});
+        $('#{0}'.lym_format(win_id)).window({"title": "创建套件集"});
         $('#{0} input#project_id'.lym_format(fm_id)).val(selected.attributes["id"]);
 
     }
