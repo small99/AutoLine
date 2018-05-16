@@ -129,8 +129,8 @@ class Project(Resource):
 
                 db.session.add(project)
                 db.session.commit()
-                app = current_app._get_current_object()
-                app.config["TRIGGER"].load_job_list()
+                # app = current_app._get_current_object()
+                # app.config["TRIGGER"].load_job_list()
             except Exception as e:
                 result["status"] = "fail"
                 result["msg"] = "异常：%s" % str(e)

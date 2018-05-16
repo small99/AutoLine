@@ -77,7 +77,9 @@ def run_process(id):
 
     app = current_app._get_current_object()
 
-    app.config["RUNNERS"].append(runner)
+    app.config["TRIGGER"].update_job(id)
+
+    # app.config["RUNNERS"].append(runner)
 
     return json.dumps({"status": "success", "msg": "任务启动成功"})
 
