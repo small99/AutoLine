@@ -18,7 +18,7 @@ from app.models import User, Role
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
 
-if sys.version_info < (3, 7):
+if sys.version_info < (3, 4):
     print("请安装Python3.4及以上版本")
     exit(0)
 
