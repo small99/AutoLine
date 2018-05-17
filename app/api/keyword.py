@@ -56,7 +56,7 @@ class Keyword(Resource):
                 children.extend(self.get_objects(project.id))
 
             keyword_list = [{
-                "id": project.id,
+                "id": "project_%s" % project.id,
                 "text": project.name,
                 "state": "closed",
                 "iconCls": "icon-project",
@@ -76,7 +76,7 @@ class Keyword(Resource):
         for obj in objects:
             vars = self.get_vars(obj.id)
             children.append({
-                "id": obj.id,
+                "id": "objects_%s" % obj.id,
                 "text": obj.name,
                 "iconCls": "icon-object",
                 "state": "closed",
@@ -91,7 +91,7 @@ class Keyword(Resource):
         vars = AutoVar.query.filter_by(object_id=object_id).order_by(AutoVar.id.asc()).all()
         for var in vars:
             children.append({
-                "id": var.id,
+                "id": "var_%s" % var.id,
                 "text": var.name,
                 "iconCls": "icon-var"
             })
