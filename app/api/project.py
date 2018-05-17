@@ -28,7 +28,7 @@ class Project(Resource):
         self.parser.add_argument('desc', type=str)
         self.parser.add_argument('version', type=str)
         self.parser.add_argument('tags', type=str)
-        self.parser.add_argument('enable', type=bool, default=False)
+        self.parser.add_argument('enable', type=bool, default=True)
         self.parser.add_argument('id', type=int, default=-1)
         self.parser.add_argument('method', type=str)
         self.parser.add_argument('cron', type=str)

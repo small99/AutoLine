@@ -21,3 +21,4 @@ def run_job(id):
                data={"email": "AutoExecutor@126.com", "password": "123456", "method": "login"})
 
     s.get("http://127.0.0.1:5000/test_run/web/%s" % id)
+

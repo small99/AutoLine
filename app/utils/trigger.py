@@ -59,7 +59,7 @@ class Trigger:
             # key_list = ("minute", "hour", "day", "month", "day_of_week")
 
             for p in projects:
-                if self.scheduler.get_job(p.id) is None:
+                if p.enable and self.scheduler.get_job(p.id) is None:
                     cron = p.cron.replace("\n", "").strip().split(" ")
                     #print(cron)
                     if len(cron) < 5:
@@ -67,24 +67,28 @@ class Trigger:
                     j = self.scheduler.add_job(func=run_job, trigger='cron', name=p.name, replace_existing=True,
                                                minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
                                                id="%s" % p.id, args=(p.id,))
+                else:
+                    self.update_job(p.id)
 
     def update_job(self, id):
         with self.app.app_context():
             p = AutoProject.query.filter_by(id=id).first()
-            cron = p.cron.replace("\n", "").strip().split(" ")
-            if len(cron) < 5:
-                return False
+            if p.enable:
+                cron = p.cron.replace("\n", "").strip().split(" ")
+                if len(cron) < 5:
+                    return False
+                print(self.scheduler.get_job(id))
 
-            if self.scheduler.get_job(id) is None:
-                self.scheduler.add_job(func=run_job, trigger='cron', name=p.name,
-                                       minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
-                                       id="%s" % id, args=(id,))
-            else:
-                self.remove_job(id)
+                if self.scheduler.get_job(id) is None:
+                    self.scheduler.add_job(func=run_job, trigger='cron', name=p.name,
+                                           minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
+                                           id="%s" % id, args=(id,))
+                else:
+                    self.remove_job(id)
 
-                self.scheduler.add_job(func=run_job, trigger='cron', name=p.name,
-                                       minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
-                                       id="%s" % id, args=(id,))
+                    self.scheduler.add_job(func=run_job, trigger='cron', name=p.name,
+                                           minute=cron[0], hour=cron[1], day=cron[2], month=cron[3], day_of_week=cron[4],
+                                           id="%s" % id, args=(id,))
 
             return True
 
@@ -100,13 +104,48 @@ class Trigger:
 
     def get_jobs(self):
         to_zone = tz.gettz("CST")
-        jobs = self.scheduler.get_jobs()
-        data = {"total": len(jobs), "rows": []}
+        #jobs = self.scheduler.get_jobs()
         urls = {
             "pass": "success.png",
             "fail": "fail.png",
-            "running": "run.gif"
+            "running": "run.gif",
+            "none": "project.png"
         }
+        projects = AutoProject.query.order_by(AutoProject.id.desc()).all()
+        data = {"total": len(projects), "rows": []}
+
+        for p in projects:
+            next_run_time = "调度未启动"
+            job = self.scheduler.get_job(p.id)
+            if job is not None:
+                next_run_time = job.next_run_time.astimezone(to_zone).strftime("%Y-%m-%d %H:%M:%S")
+
+                # 获取该job下最后一次运行状态
+                task = AutoTask.query.filter_by(project_id=job.id).order_by(AutoTask.build_no.desc()).first()
+                if task is not None:
+                    output_dir = os.getcwd() + "/logs/%s/%s" % (task.project_id, task.build_no)
+                    if os.path.exists(output_dir + "/report.html"):
+                        tree = ET.parse(output_dir + "/output.xml")
+                        root = tree.getroot()
+                        # passed = root.find("./statistics/suite/stat").attrib["pass"]
+                        fail = root.find("./statistics/suite/stat").attrib["fail"]
+                        if int(fail) != 0:
+                            status = 'fail'
+                        else:
+                            status = 'pass'
+            else:
+                status = "none"
+
+            data["rows"].append({"id": "%s" % p.id,
+                                 "name": p.name,
+                                 "enable": p.enable,
+                                 "status": status,
+                                 "url": url_for('static', filename='images/%s' % urls[status]),
+                                 "cron": p.cron,
+                                 "next_run_time": next_run_time
+                                 })
+
+        """
         for job in jobs:
             status = "running"
             task = AutoTask.query.filter_by(project_id=job.id).order_by(AutoTask.build_no.desc()).first()
@@ -131,6 +170,7 @@ class Trigger:
                                  "cron": AutoProject.query.filter_by(id=job.id).first().cron,
                                  "next_run_time": job.next_run_time.astimezone(to_zone).strftime("%Y-%m-%d %H:%M:%S")
                                  })
+        """
 
         return data
 

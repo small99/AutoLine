@@ -22,5 +22,23 @@ function view_task(value, row, index){
 }
 
 function manage_task(value, row, index){
-    return "<a href=\"#\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-task'\" onclick=\"\">查看任务</a>".lym_format(row.id);
+    var text = { "false": "启动", "true": "停止" };
+    var url = "/api/v1/trigger/"
+    var method = {"false": "start", "true": "stop"};
+    return "<a href=\"#\" class=\"easyui-linkbutton\" onclick=\"manage_scheduler('{1}','{2}','{3}')\">{0}</a>".lym_format(text[row.enable], method[row.enable], url, row.id);
+}
+
+function manage_scheduler(method, url, id){
+    $.ajax({
+        type : 'POST',
+        url : url,
+        data:  {
+               "method": method,
+               "trigger_id": id
+            },
+        success : function(data, textStatus, request) {
+            $("#task_list").datagrid('reload');
+            show_msg("提示", data.msg);
+            }
+    });
 }
