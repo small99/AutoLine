@@ -252,7 +252,7 @@
         <form id="var_fm" action="/api/v1/object/" method="post">
 
             <div style="margin-bottom:20px">
-                <input name="name" id="name" class="easyui-textbox" label="对象名:" labelPosition="left" style="width:100%;height:32px;">
+                <input name="name" id="name" class="easyui-textbox" data-options="validType:'var_object'" label="对象名:" labelPosition="left" style="width:100%;height:32px;">
             </div>
             <div style="margin-bottom:20px">
                 <input name="value" id="value" class="easyui-textbox" label="对象值:" labelPosition="left" multiline="true"  style="width:100%;height:118px;">
@@ -346,6 +346,14 @@
         project_stats('project_stats');
         //task_stats('task_stats');
         exec_stats('exec_stats');
+        $.extend($.fn.textbox.defaults.rules, {
+            var_object : {// 验证变量输入
+                  validator : function(value) {
+                      return /^[\$|&|@]\{[A-Za-z0-9_]+\}$/.test(value);
+                  },
+                  message : '变量创建规则<br/>单个变量:${变量名}<br/>列表变量:@{变量名}<br/>字典变量:&{变量名}<br/>变量名只允许：大小写字母、数字或下划线'
+            }
+        });
     </script>
 </body>
 </html>
