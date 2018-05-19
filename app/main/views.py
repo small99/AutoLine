@@ -139,5 +139,7 @@ def view_image(project_id, build_no, filename):
 
     img_path = os.getcwd() + "/logs/%s/%s/images/%s" % (project_id, build_no, filename)
     img_path.replace("\\", "/")
+    if os.path.exists(img_path):
+        return send_file(img_path)
 
-    return send_file(img_path)
+    return "截图失败，木有图片!!!"
