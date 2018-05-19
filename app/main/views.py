@@ -91,7 +91,7 @@ def debug(id):
     log_path = os.getcwd() + "/logs/%s/%s/debug.log" % (project_id, build_no)
     logs = "还没捕获到调试信息^_^"
     if os.path.exists(log_path):
-        f = open(log_path, "r")
+        f = codecs.open(log_path, "r", "utf-8")
         logs = f.read()
         f.close()
 
