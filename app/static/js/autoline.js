@@ -252,7 +252,7 @@ function addViewImageTab(project_id, build_no, filename){
         refreshTab({title: title, url: url});
     }
     else {
-        var content='<iframe scrolling="yes" frameborder="0"  src="{0}" style="width:100%;height:768px;"></iframe>'.lym_format(url);
+        var content='<iframe scrolling="yes" frameborder="0"  src="{0}" style="width:100%;height:1024px;"></iframe>'.lym_format(url);
         editor_tabs.tabs('add',{
             title: '查看截图',
             closable: true,
