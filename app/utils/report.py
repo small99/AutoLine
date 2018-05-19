@@ -65,9 +65,12 @@ class Report:
                 image = ""
                 for msg in kw.iter("msg"):
                     if "<a" in msg.text:
-                        image = re.findall('src="images/(.+)" width', msg.text)[0]
+                        img = re.findall('src="images/(.+)" width', msg.text)
+                        if len(img) != 0:
+                            image = img[0]
                     else:
                         text = text + msg.text + "<br>"
+                print(text)
                 """    
                 msg = kw.find("msg")
                 if msg is not None:

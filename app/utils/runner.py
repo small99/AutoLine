@@ -11,6 +11,7 @@ Email: lymking@foxmail.com
 """
 
 import os
+import codecs
 import time
 import json
 import subprocess
@@ -138,8 +139,9 @@ class Runner:
             output_dir = output_dir.replace("\\", "/")
             # -x result/output.xml -l result/log.html -r result/report.html
             command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
-            self._out_fd = open(output_dir + "/logs.log", "a+")
-            self._process = subprocess.Popen(command, shell=True, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            #print(command)
+            self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
+            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
             #self._process = Process(command)
 
             #self._process.start()
@@ -170,7 +172,7 @@ class Runner:
             # -x result/output.xml -l result/log.html -r result/report.html
             command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
             self._out_fd = open(output_dir + "/logs.log", "a+")
-            self._process = subprocess.Popen(command, shell=True, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
             #self._process = Process(command)
 
             #self._process.start()

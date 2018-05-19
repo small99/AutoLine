@@ -110,18 +110,21 @@ def report(project_id, build_no):
 @main.route('/run_logs/<project_id>/<build_no>', methods=['GET'])
 def run_logs(project_id, build_no):
     log_path = os.getcwd() + "/logs/%s/%s/logs.log" % (project_id, build_no)
+    log_path = log_path.replace("\\", "/")
     logs = "还没捕获到日志信息^_^"
     if os.path.exists(log_path):
         f = codecs.open(log_path, "r", "utf-8")
         logs = f.read()
+        print(logs)
         f.close()
-
+        """
         app = current_app._get_current_object()
         for r in app.config["RUNNERS"]:
             p = r["runner"]
             if p._process.returncode == 0:
                 print('Subprogram success')
                 app.config["RUNNERS"].remove(r)
+        """
 
     return render_template('logs.html', logs=logs)
 
