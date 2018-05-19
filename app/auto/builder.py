@@ -102,7 +102,7 @@ class Builder:
                 'Dialogs', 'OperatingSystem', 'Process',
                 'Screenshot', 'String', 'Telnet', 'XML',
                 'SeleniumLibrary',
-                'AppiumLibrary',
+                #'AppiumLibrary',
                 'RequestsLibrary')
 
         case_file.write("*** Settings ***\n")
