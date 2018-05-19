@@ -11,6 +11,7 @@ Email: lymking@foxmail.com
 """
 
 import os
+import codecs
 from datetime import datetime
 from flask import current_app
 from flask_login import current_user
@@ -71,7 +72,7 @@ class Builder:
         resource_path = obj_dir + "/resource.txt"
         resource_path = resource_path.replace("\\", "/")
         #resource_file = codecs.open(resource_path, 'w', 'UTF-8')
-        resource_file = open(resource_path, 'w')
+        resource_file = codecs.open(resource_path, 'w', "utf-8")
         resource_file.write("*** Variables ***\n")
         objects = AutoObject.query.filter_by(project_id=self.id).order_by(AutoObject.id.asc()).all()
         for obj in objects:
@@ -93,7 +94,7 @@ class Builder:
             os.makedirs(images_dir)
 
         case_path = suite_dir + "/testcase.robot"
-        case_file = open(case_path, 'w')
+        case_file = codecs.open(case_path, 'w', "utf-8")
         #case_file = codecs.open(case_path, 'w', 'UTF-8')
 
         # 写settings

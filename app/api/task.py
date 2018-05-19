@@ -54,7 +54,7 @@ class Task(Resource):
         for task in tasks:
             if task.create_author_id is None:
                 continue
-                
+
             status = self.__check_task_status(task.project_id, task.build_no)
             data["rows"].append({
                 "id": task.id,
