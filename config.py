@@ -69,6 +69,7 @@ class ProductionConfig(Config):
     #SQLALCHEMY_ECHO = True
     TRIGGER_DATABASE_URL = os.environ.get('TRIGGER_DATABASE_URL')
 
+
     @classmethod
     def init_app(cls, app):
         Config.init_app(app)

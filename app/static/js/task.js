@@ -16,6 +16,9 @@ function view_detail_report(value, row, index){
     return "<a href=\"#\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-product'\" onclick=\"parent.addReportTab({0}, {1});\">查看报告</a>".lym_format(row.project_id, row.build_no);
 }
 
+function view_run_log(value, row, index){
+    return "<a href=\"#\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-product'\" onclick=\"parent.addLogTab({0}, {1});\">查看日志</a>".lym_format(row.project_id, row.build_no);
+}
 
 function view_task(value, row, index){
     return "<a href=\"#\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-task'\" onclick=\"parent.addTaskTab('查看任务', '/task/{0}', 'icon-task');\">查看任务</a>".lym_format(row.id);

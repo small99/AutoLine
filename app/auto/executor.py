@@ -14,7 +14,6 @@ import requests
 
 
 def run_job(id):
-
     s = requests.Session()
 
     r = s.post("http://127.0.0.1:5000/api/v1/auth/",

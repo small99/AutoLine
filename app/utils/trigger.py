@@ -70,6 +70,16 @@ class Trigger:
                 else:
                     self.update_job(p.id)
 
+    def add_job(self, func, name, id, cron):
+        if self.scheduler.get_job(id) is None:
+            self.scheduler.add_job(func=func, trigger='cron', name=name,
+                                   minute=cron[0],
+                                   hour=cron[1],
+                                   day=cron[2],
+                                   month=cron[3],
+                                   day_of_week=cron[4],
+                                   id="%s" % id)
+
     def update_job(self, id):
         with self.app.app_context():
             p = AutoProject.query.filter_by(id=id).first()
@@ -116,6 +126,7 @@ class Trigger:
 
         for p in projects:
             next_run_time = "调度未启动"
+            status = "pass"
             job = self.scheduler.get_job(p.id)
             if job is not None:
                 next_run_time = job.next_run_time.astimezone(to_zone).strftime("%Y-%m-%d %H:%M:%S")

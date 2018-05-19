@@ -9,10 +9,10 @@ function show_status_style(value, row, index){
 
 
 function show_log_style(value, row, index){
+
     if(value != undefined){
-        if(value.indexOf("<a") != -1){
-            console.log(row);
-            return "<a href=\"#\" class=\"easyui-linkbutton\" onclick=\"parent.addViewImageTab({0}, {1}, '{2}');\">查看截图</a>".lym_format(row.project_id, row.build_no, row.image);
+        if(row.image != ""){
+            return "{0}<a href=\"#\" class=\"easyui-linkbutton\" onclick=\"parent.addViewImageTab({1}, {2}, '{3}');\">查看截图</a>".lym_format(row.msg, row.project_id, row.build_no, row.image);
         }
         else{
             return value;

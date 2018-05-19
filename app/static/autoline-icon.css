@@ -28,6 +28,9 @@
 .icon-debug{
 	background:url('images/debug.png') no-repeat center center;
 }
+.icon-run-test{
+	background:url('images/run.png') no-repeat center center;
+}
 .icon-web-run{
 	background:url('images/web_run.png') no-repeat center center;
 }

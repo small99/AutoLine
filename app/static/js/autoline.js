@@ -205,6 +205,25 @@ function addReportTab(project_id, build_no){
     }
 }
 
+function addLogTab(project_id, build_no){
+    var editor_tabs = $("#editor_tabs");
+    var url = "/run_logs/{0}/{1}".lym_format(project_id, build_no)
+    if (editor_tabs.tabs('exists', '查看日志')){
+        //如果tab已经存在,则选中并刷新该tab
+        editor_tabs.tabs('select', '查看日志');
+        refreshTab({title: title, url: url});
+    }
+    else {
+        var content='<iframe scrolling="yes" frameborder="0"  src="{0}" style="width:100%;height:740px;"></iframe>'.lym_format(url);
+        editor_tabs.tabs('add',{
+            title: '查看日志',
+            closable: true,
+            content: content,
+            iconCls: 'icon-report'
+        });
+    }
+}
+
 function addTaskTab(title, url, icon){
     var editor_tabs = $("#editor_tabs");
     if (editor_tabs.tabs('exists', title)){
@@ -279,5 +298,11 @@ function test_run(category){
             success : function(data, textStatus, request) {
             }
         });
+        addManageTab('查看任务', '/task', 'icon-task');
     }
+}
+
+function debug_run(){
+    var node = $('#project_tree').tree('getSelected');
+    addTaskTab("调试运行", "/debug/{0}".lym_format(node.attributes["id"]), "icon-debug");
 }

@@ -172,6 +172,8 @@ PhantomJS驱动：http://phantomjs.org/releases.html
 HtmlUnit驱动：https://sourceforge.net/projects/htmlunit/files/htmlunit/
 
 ## 截图
+调试模式
+![调试模式](./app/static/images/demo/debug_mode.png)
 
 产品管理
 ![产品管理](./app/static/images/demo/product.png)
@@ -180,13 +182,18 @@ HtmlUnit驱动：https://sourceforge.net/projects/htmlunit/files/htmlunit/
 ![项目管理](./app/static/images/demo/project.png)
 
 调度管理
-![调度管理](./app/static/images/demo/scheduler.png)
+![调度管理](./app/static/images/demo/scheduler_manage.png)
+
+
+运行日志
+![查看任务](./app/static/images/demo/run_logs.png)
+![查看任务](./app/static/images/demo/run_logs_detail.png)
 
 查看任务
 ![查看任务](./app/static/images/demo/task.png)
 
 测试报告
-![查看报告](./app/static/images/demo/report.png)
+![查看报告](./app/static/images/demo/run_logs_detail.png)
 
 关键字帮助文档
 ![帮助手册](./app/static/images/demo/help.png)

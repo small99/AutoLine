@@ -13,6 +13,7 @@ Email: lymking@foxmail.com
 import os
 import time
 import json
+import subprocess
 from datetime import datetime
 from threading import Thread, Timer
 import xml.etree.ElementTree as ET
@@ -66,8 +67,17 @@ def check_process_status(app):
             print(e)
 
 
+def debug_run(id):
+    builder = Builder(id)
+    builder.build()
+    runner = Runner(builder.id, builder.build_no)
+
+    runner.debug()
+
+    return (builder.id, builder.build_no)
+
+
 def run_process(id):
-    from ..utils.runner import Runner
     builder = Builder(id)
     builder.build()
 
@@ -79,7 +89,25 @@ def run_process(id):
 
     app.config["TRIGGER"].update_job(id)
 
-    # app.config["RUNNERS"].append(runner)
+    app.config["RUNNERS"].append({
+        "project_id": builder.id,
+        "task_id": builder.build_no,
+        "runner": runner
+    })
+    """
+    for r in app.config["RUNNERS"]:
+        print("get running logs: %s %s" % (r["project_id"], r["task_id"]))
+        p = r["runner"]
+        while p._process.poll() is None:
+            line = p._process.stdout.readline()
+            line = line.strip()
+            if line:
+                print('Subprogram output: [{}]'.format(line.decode()))
+        if p._process.returncode == 0:
+            print('Subprogram success')
+        else:
+            print('Subprogram failed')
+    """
 
     return json.dumps({"status": "success", "msg": "任务启动成功"})
 
@@ -90,6 +118,7 @@ class Runner:
         self.build_no = build_no
         self._process = None
         self._timer = None
+        self._out_fd = None
 
     def run(self):
         #
@@ -105,11 +134,34 @@ class Runner:
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
             # -x result/output.xml -l result/log.html -r result/report.html
-            command = ["pybot", "-d", "%s" % output_dir, "-N", "%s" % name,"%s/testcase.robot" % output_dir]
+            command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
+            self._out_fd = open(output_dir + "/logs.log", "a+")
+            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            #self._process = Process(command)
 
-            self._process = Process(command)
+            #self._process.start()
 
-            self._process.start()
+        except Exception as e:
+            print(str(e))
+            pass
+
+        return {"status": "success",
+                "msg": "任务启动成功",
+                "project_id": self.project_id,
+                "build_no": self.build_no}
+
+    def debug(self):
+        try:
+            output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
+            # -x result/output.xml -l result/log.html -r result/report.html
+            command = ["pybot", "-d", "%s" % output_dir, "--dryrun", "-N", "调试输出", "%s/testcase.robot" % output_dir]
+            self._out_fd = open(output_dir + "/debug.log", "a+")
+            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            while True:
+                if self._process.poll() == 0:  # 判断子进程是否结束
+                    break
+                else:
+                    time.sleep(0.2)
 
         except Exception as e:
             print(str(e))
