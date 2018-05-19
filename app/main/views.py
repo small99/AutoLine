@@ -11,7 +11,7 @@ Email: lymking@foxmail.com
 """
 
 import os
-
+import codecs
 from flask import render_template, send_file, current_app
 from flask_login import login_required, current_user, logout_user
 
@@ -112,7 +112,7 @@ def run_logs(project_id, build_no):
     log_path = os.getcwd() + "/logs/%s/%s/logs.log" % (project_id, build_no)
     logs = "还没捕获到日志信息^_^"
     if os.path.exists(log_path):
-        f = open(log_path, "r")
+        f = codecs.open(log_path, "r", "utf-8")
         logs = f.read()
         f.close()
 
@@ -138,5 +138,6 @@ def detail(project_id, build_no):
 def view_image(project_id, build_no, filename):
 
     img_path = os.getcwd() + "/logs/%s/%s/images/%s" % (project_id, build_no, filename)
+    img_path.replace("\\", "/")
 
     return send_file(img_path)
