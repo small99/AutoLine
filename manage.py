@@ -12,6 +12,7 @@ Email: lymking@foxmail.com
 
 import os
 import sys
+import requests
 from app import create_app, db
 from app.utils.trigger import Trigger
 from app.models import User, Role
@@ -21,6 +22,17 @@ from flask_migrate import Migrate, MigrateCommand
 if sys.version_info < (3, 4):
     print("请安装Python3.4及以上版本")
     exit(0)
+
+
+def check_version():
+    f = open('version.txt', 'r')
+    version = f.readline()
+    s = requests.Session()
+    r_version = s.get("https://github.com/small99/AutoLine/version.txt").text
+    if version != r_version:
+        print("AutoLine开源平台代码已有更新，请到下面的地址更新代码:")
+        print("https://github.com/small99/AutoLine")
+        exit(0)
 
 os.environ["PATH"] = os.environ["PATH"] + ";" + os.getcwd() + "/bin"
 
@@ -71,6 +83,9 @@ def keyword():
 
 
 if __name__ == '__main__':
+
+    check_version()
+
     if "runserver" in sys.argv:
         app.config["TRIGGER"] = Trigger(app)
         app.config["TRIGGER"].setup()
