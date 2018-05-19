@@ -11,6 +11,7 @@ Email: lymking@foxmail.com
 """
 
 import os
+import platform
 import codecs
 import time
 import json
@@ -137,11 +138,17 @@ class Runner:
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
             output_dir = output_dir.replace("\\", "/")
-            # -x result/output.xml -l result/log.html -r result/report.html
-            command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
-            #print(command)
             self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
-            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            # -x result/output.xml -l result/log.html -r result/report.html
+            shell = False
+            if "Windows" in platform.platform():
+                command = "pybot -d %s -L DEBUG -N %s %s/testcase.robot" % (output_dir, name, output_dir)
+                shell = True
+            else:
+                command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
+                #print(command)
+
+            self._process = subprocess.Popen(command, shell=shell, stdout=self._out_fd, stderr=subprocess.STDOUT)
             #self._process = Process(command)
 
             #self._process.start()
@@ -169,10 +176,21 @@ class Runner:
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
             output_dir = output_dir.replace("\\", "/")
-            # -x result/output.xml -l result/log.html -r result/report.html
-            command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
             self._out_fd = open(output_dir + "/logs.log", "a+")
-            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            shell = False
+            if "Windows" in platform.platform():
+                command = "pybot -d %s -L DEBUG -N %s %s/testcase.robot" % (output_dir, name, output_dir)
+                shell = True
+            else:
+                command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name,
+                           "%s/testcase.robot" % output_dir]
+                # print(command)
+
+            self._process = subprocess.Popen(command, shell=shell, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            # -x result/output.xml -l result/log.html -r result/report.html
+            #command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
+            #self._out_fd = open(output_dir + "/logs.log", "a+")
+            #self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
             #self._process = Process(command)
 
             #self._process.start()

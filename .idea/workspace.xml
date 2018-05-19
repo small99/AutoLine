@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5ae474a-e2fe-4b02-bccd-d8be882227ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/main/views.py" afterPath="$PROJECT_DIR$/app/main/views.py" />
-      <change beforePath="$PROJECT_DIR$/app/templates/report.html" afterPath="$PROJECT_DIR$/app/templates/report.html" />
-      <change beforePath="$PROJECT_DIR$/app/utils/report.py" afterPath="$PROJECT_DIR$/app/utils/report.py" />
       <change beforePath="$PROJECT_DIR$/app/utils/runner.py" afterPath="$PROJECT_DIR$/app/utils/runner.py" />
       <change beforePath="$PROJECT_DIR$/history.md" afterPath="$PROJECT_DIR$/history.md" />
-      <change beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
       <change beforePath="$PROJECT_DIR$/version.txt" afterPath="$PROJECT_DIR$/version.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +28,8 @@
       <file leaf-file-name="runner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/utils/runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-302">
-              <caret line="144" column="45" lean-forward="false" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
+            <state relative-caret-position="489">
+              <caret line="206" column="6" lean-forward="true" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="6" />
               <folding>
                 <element signature="e#94#103#0" expanded="true" />
               </folding>
@@ -56,21 +51,11 @@
         <entry file="file://$PROJECT_DIR$/history.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="120">
-                <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <first_editor relative-caret-position="15">
+                <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
                 <folding />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/5/39/output.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="69" column="67" lean-forward="false" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="67" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -190,10 +175,10 @@
         <option value="$PROJECT_DIR$/app/auto/builder.py" />
         <option value="$PROJECT_DIR$/app/main/views.py" />
         <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/app/utils/runner.py" />
         <option value="$PROJECT_DIR$/logs/5/39/output.xml" />
         <option value="$PROJECT_DIR$/app/utils/report.py" />
         <option value="$PROJECT_DIR$/app/templates/report.html" />
+        <option value="$PROJECT_DIR$/app/utils/runner.py" />
         <option value="$PROJECT_DIR$/version.txt" />
         <option value="$PROJECT_DIR$/history.md" />
       </list>
@@ -757,16 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/utils/runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="144" column="45" lean-forward="false" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
-          <folding>
-            <element signature="e#94#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -775,6 +750,16 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="206" column="6" lean-forward="true" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="6" />
+          <folding>
+            <element signature="e#94#103#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -789,8 +774,8 @@
     <entry file="file://$PROJECT_DIR$/history.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
             <folding />
           </first_editor>
           <second_editor />
