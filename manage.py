@@ -28,7 +28,7 @@ def check_version():
     f = open('version.txt', 'r')
     version = f.readline()
     s = requests.Session()
-    r_version = s.get("https://github.com/small99/AutoLine/version.txt").text
+    r_version = s.get("https://raw.githubusercontent.com/small99/AutoLine/master/version.txt").text
     if version != r_version:
         print("AutoLine开源平台代码已有更新，请到下面的地址更新代码:")
         print("https://github.com/small99/AutoLine")
