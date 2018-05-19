@@ -79,7 +79,8 @@ def manage(category, id):
 @login_required
 @main.route('/test_run/<category>/<id>', methods=['GET'])
 def test_run(category, id):
-    status = run_process(id)
+
+    status = run_process(category, id)
 
     return status
 

@@ -43,6 +43,7 @@ class Builder:
         if project:
             #self.suite = TestSuite(name=project.name, doc=project.desc)
             self.project_dir = self.root + '/logs/%d' % project.id
+            self.project_dir = self.project_dir.replace("\\", "/")
             self.project_name = project.name
 
             if os.path.exists(self.project_dir) is False:
@@ -66,7 +67,9 @@ class Builder:
 
     def build_variables(self):
         obj_dir = self.project_dir + "/%d" % self.build_no
+        obj_dir = obj_dir.replace("\\", "/")
         resource_path = obj_dir + "/resource.txt"
+        resource_path = resource_path.replace("\\", "/")
         #resource_file = codecs.open(resource_path, 'w', 'UTF-8')
         resource_file = open(resource_path, 'w')
         resource_file.write("*** Variables ***\n")
@@ -82,8 +85,10 @@ class Builder:
 
     def build_suites(self):
         suite_dir = self.project_dir + "/%d" % self.build_no
+        suite_dir = suite_dir.replace("\\", "/")
         # 截图目录
-        images_dir = suite_dir + "/images"
+        images_dir = os.path.normpath(suite_dir + "/images")
+        images_dir = images_dir.replace("\\", "/")
         if os.path.exists(images_dir) is False:
             os.makedirs(images_dir)
 

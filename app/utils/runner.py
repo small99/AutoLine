@@ -20,7 +20,7 @@ import xml.etree.ElementTree as ET
 from flask import current_app
 from flask_login import current_user
 from sqlalchemy import and_
-from ..models import AutoTask, AutoProject
+from ..models import AutoTask, AutoProject, User
 from .. import db
 from ..auto.builder import Builder
 from .process import Process
@@ -77,13 +77,15 @@ def debug_run(id):
     return (builder.id, builder.build_no)
 
 
-def run_process(id):
+def run_process(category, id):
     builder = Builder(id)
     builder.build()
 
     runner = Runner(builder.id, builder.build_no)
-
-    runner.run()
+    if category == "auto":
+        runner.auto_run()
+    else:
+        runner.run()
 
     app = current_app._get_current_object()
 
@@ -120,6 +122,37 @@ class Runner:
         self._timer = None
         self._out_fd = None
 
+    def auto_run(self):
+        try:
+            user_id = User.query.filter_by(username="AutoExecutor").first().id
+            name = AutoProject.query.filter_by(id=self.project_id).first().name
+            task = AutoTask(project_id=self.project_id,
+                            build_no=self.build_no,
+                            status="running",
+                            create_author_id=user_id,
+                            create_timestamp=datetime.now())
+            db.session.add(task)
+            db.session.commit()
+
+            output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
+            output_dir = output_dir.replace("\\", "/")
+            # -x result/output.xml -l result/log.html -r result/report.html
+            command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
+            self._out_fd = open(output_dir + "/logs.log", "a+")
+            self._process = subprocess.Popen(command, shell=True, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            #self._process = Process(command)
+
+            #self._process.start()
+
+        except Exception as e:
+            print(str(e))
+            pass
+
+        return {"status": "success",
+                "msg": "任务启动成功",
+                "project_id": self.project_id,
+                "build_no": self.build_no}
+
     def run(self):
         #
         try:
@@ -133,10 +166,11 @@ class Runner:
             db.session.commit()
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
+            output_dir = output_dir.replace("\\", "/")
             # -x result/output.xml -l result/log.html -r result/report.html
             command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
             self._out_fd = open(output_dir + "/logs.log", "a+")
-            self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
+            self._process = subprocess.Popen(command, shell=True, stdout=self._out_fd, stderr=subprocess.STDOUT)
             #self._process = Process(command)
 
             #self._process.start()
@@ -153,6 +187,7 @@ class Runner:
     def debug(self):
         try:
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
+            output_dir = output_dir.replace("\\", "/")
             # -x result/output.xml -l result/log.html -r result/report.html
             command = ["pybot", "-d", "%s" % output_dir, "--dryrun", "-N", "调试输出", "%s/testcase.robot" % output_dir]
             self._out_fd = open(output_dir + "/debug.log", "a+")
@@ -195,6 +230,7 @@ class Runner:
 
     def write_result(self):
         output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
+        output_dir = output_dir.replace("\\", "/")
         print("write ... result ...")
         print(os.path.exists(output_dir + "/log.html"))
         if os.path.exists(output_dir + "/log.html"):
