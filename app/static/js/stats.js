@@ -84,7 +84,7 @@ function exec_stats(id){
                 data: {
                     datasets: [{
                         data: data.data,
-                        backgroundColor: ["green", "blue", "red"]
+                        backgroundColor: ["green", "blue", "red", "yellow"]
                     }],
                     labels: data.label
                 }

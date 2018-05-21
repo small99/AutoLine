@@ -12,6 +12,7 @@ Email: lymking@foxmail.com
 
 import os
 import random
+import codecs
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -21,7 +22,7 @@ choice = ("QWERTYUIOPASDFGHJKLMNBVCXZqazxswedcvfrtgbnhyujmkiolp1234567890!@#$%^&
 class Config:
     if os.path.exists('.env'):
         print('Import environment from .env')
-        for line in open('.env'):
+        for line in codecs.open('.env'):
             var = line.strip().split('=')
             if len(var) == 2:
                 os.environ[var[0]] = var[1]
@@ -64,7 +65,7 @@ class DevelopmentConfig(Config):
 
 
 class ProductionConfig(Config):
-    DEBUG = True
+    DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') # + "?charset=utf8" or 'sqlite:///' + os.path.join(basedir, 'AutoLine.sqlite')
     #SQLALCHEMY_ECHO = True
     TRIGGER_DATABASE_URL = os.environ.get('TRIGGER_DATABASE_URL')

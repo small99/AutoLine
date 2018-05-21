@@ -66,4 +66,7 @@ class Stats(Resource):
         stat["data"].append(AutoTask.query.filter_by(status="fail").count())
         stat["label"].append("失败")
 
+        stat["data"].append(AutoTask.query.filter_by(status="exception").count())
+        stat["label"].append("异常")
+
         return stat

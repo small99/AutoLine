@@ -33,7 +33,7 @@
 </head>
 <body class="easyui-layout">
     <div style="margin: 8px 0;"></div>
-	<table id="task_list" class="easyui-datagrid" title="任务列表" style="width:100%;height:auto;"
+	<table id="task_list" class="easyui-datagrid" title="调度状态" style="width:100%;height:auto;"
 			data-options="rownumbers: true,
 			    singleSelect: true,
 			    url: '/api/v1/trigger/',
@@ -57,17 +57,23 @@
 		</thead>
 	</table>
 	<script type="text/javascript">
+		var timer=null;
+
 		var toolbar = [{
-			text:'刷新',
-			iconCls:'icon-reload',
-			handler:function(){
-				$("#task_list").datagrid('reload');
-			}
-		}];
-
-		// 定时刷新结果
-		setInterval(function(){ $("#task_list").datagrid('reload'); }, 5000);
-
+				text:'启动刷新',
+				iconCls:'icon-reload',
+				handler:function(){
+					timer = setInterval(function(){ $("#task_list").datagrid('reload'); }, 5000);
+					show_msg("提示信息", "启动自动刷新成功");
+				}
+			},'-',{
+				text:'停止刷新',
+				iconCls:'icon-reload',
+				handler:function(){
+					clearInterval(timer);
+					show_msg("提示信息", "停止自动刷新成功");
+				}
+			}];
 	</script>
 	</body>
 </html>
