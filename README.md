@@ -23,6 +23,10 @@
 
 AutoLine开源平台是一个开源自动化测试解决方案，基于RobotFramework进行二次开发，支持RobotFramework几乎所有的库。
 
+用户简明教程： [简明教程](https://github.com/small99/AutoLine/blob/master/User%20Guide/User%20Guide/使用简明教程.md)
+
+安装部署教程： [安装教程](https://github.com/small99/AutoLine/blob/master/User%20Guide/User%20Guide/安装部署教程.md)
+
 ## 为什么要开发AutoLine
 
 1. 为中小企业提供一个好用的自动化测试解决方案
