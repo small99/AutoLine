@@ -12,6 +12,7 @@ Email: lymking@foxmail.com
 
 import os
 import sys
+import codecs
 import requests
 from app import create_app, db
 from app.utils.trigger import Trigger
@@ -25,14 +26,17 @@ if sys.version_info < (3, 4):
 
 
 def check_version():
-    f = open('version.txt', 'r')
+    f = codecs.open('version.txt', 'r')
     version = f.readline()
     s = requests.Session()
     r_version = s.get("https://gitee.com/lym51/AutoLine/raw/master/version.txt").text
     if version != r_version:
+        print("*" * 25)
         print("AutoLine开源平台代码已有更新，请到下面的地址更新代码:")
         print("https://github.com/small99/AutoLine")
+        print("*" * 25)
         exit(0)
+    f.close()
 
 os.environ["PATH"] = os.environ["PATH"] + ";" + os.getcwd() + "/bin"
 

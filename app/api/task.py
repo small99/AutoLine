@@ -48,26 +48,27 @@ class Task(Resource):
         urls = {
             "pass": "success.png",
             "fail": "fail.png",
-            "running": "run.gif"
+            "running": "run.gif",
+            "exception": "exception.png"
                 }
 
         for task in tasks:
             if task.create_author_id is None:
                 continue
 
-            status = self.__check_task_status(task.project_id, task.build_no)
+            t = self.__check_task_status(task.project_id, task.build_no)
             data["rows"].append({
-                "id": task.id,
-                "status": status,
-                "url": url_for('static', filename='images/%s' % urls[status]),
-                "name": AutoProject.query.filter_by(id=task.project_id).first().name,
-                "build_no": task.build_no,
-                "project_id": task.project_id,
-                "cron": AutoProject.query.filter_by(id=task.project_id).first().cron,
-                "start_time": task.create_timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-                "end_time": task.end_timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-                "duration": "%s秒" % task.duration,
-                "runner": User.query.filter_by(id=task.create_author_id).first().username
+                "id": t.id,
+                "status": t.status,
+                "url": url_for('static', filename='images/%s' % urls[t.status]),
+                "name": AutoProject.query.filter_by(id=t.project_id).first().name,
+                "build_no": t.build_no,
+                "project_id": t.project_id,
+                "cron": AutoProject.query.filter_by(id=t.project_id).first().cron,
+                "start_time": t.create_timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+                "end_time": t.end_timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+                "duration": "%s秒" % t.duration,
+                "runner": User.query.filter_by(id=t.create_author_id).first().username
             })
 
         return data
@@ -75,11 +76,9 @@ class Task(Resource):
     def __check_task_status(self, project_id, build_no):
         status = "running"
         output_dir = os.getcwd() + "/logs/%s/%s" % (project_id, build_no)
+        task = AutoTask.query.filter(and_(AutoTask.project_id == project_id,
+                                          AutoTask.build_no == build_no)).first()
         if os.path.exists(output_dir + "/report.html"):
-            task = AutoTask.query.filter(and_(AutoTask.project_id == project_id,
-                                              AutoTask.build_no == build_no)).first()
-
-
             tree = ET.parse(output_dir + "/output.xml")
             root = tree.getroot()
             passed = root.find("./statistics/suite/stat").attrib["pass"]
@@ -97,9 +96,18 @@ class Task(Resource):
             task.end_timestamp = endtime
             task.duration = (endtime - starttime).seconds
             task.status = status
+        else:
+            now = datetime.now()
+            seconds = (now - task.create_timestamp).seconds
+            if seconds > 7200 and task.status != "exception":
+                status = "exception"
+                task.status = status
+                task.end_timestamp = now
+                task.duration = seconds
 
-            db.session.merge(task)
-            db.session.commit()
+            task.end_timestamp = now
 
-        return status
+        db.session.merge(task)
+        db.session.commit()
 
+        return task

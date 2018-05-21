@@ -9,7 +9,7 @@ function showImg(value, row, index){
 }
 
 function view_detail_report(value, row, index){
-    if(row.status == "running"){
+    if(row.status == "running" || row.status=="exception"){
         return;
     }
 
@@ -17,6 +17,9 @@ function view_detail_report(value, row, index){
 }
 
 function view_run_log(value, row, index){
+    if(row.status=="exception"){
+        return;
+    }
     return "<a href=\"#\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-product'\" onclick=\"parent.addLogTab({0}, {1});\">查看日志</a>".lym_format(row.project_id, row.build_no);
 }
 
