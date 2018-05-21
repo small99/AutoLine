@@ -54,7 +54,7 @@ function edit_project(){
     console.log(row);
     if (row){
         $("#edit_project_fm input[name='id']").val(row["id"]);
-        //$("#edit_project_fm select#category").combobox('select', row["分类"]);
+        $("#edit_project_fm select#category").combobox('select', row["分类"]);
         $("#edit_project_fm select#product_id").combobox('select', row["product_id"]);
         $("#edit_project_fm input#name").textbox('setValue', row["名称"]);
         $("#edit_project_fm input#desc").textbox('setValue', row["描述"]);
@@ -70,7 +70,7 @@ function delete_project(){
     var row = $('#project_list').datagrid('getSelected');
     if (row){
         $("#del_project_fm input[name='id']").val(row["id"]);
-        //$("#edit_project_fm select#category").combobox('select', row["分类"]);
+        $("#edit_project_fm select#category").combobox('select', row["分类"]);
         $("#del_project_fm select#product_id").combobox('select', row["product_id"]);
         $("#del_project_fm input#name").textbox('setValue', row["名称"]);
         $("#del_project_fm input#desc").textbox('setValue', row["描述"]);

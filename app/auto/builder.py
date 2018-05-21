@@ -100,19 +100,22 @@ class Builder:
         # 写settings
         libs = ('Collections', 'DateTime',
                 'Dialogs', 'OperatingSystem', 'Process',
-                'Screenshot', 'String', 'Telnet', 'XML',
-                'SeleniumLibrary',
-                #'AppiumLibrary',
-                'RequestsLibrary')
+                'Screenshot', 'String', 'Telnet', 'XML')
 
         case_file.write("*** Settings ***\n")
         for lib in libs:
             case_file.write("Library\t%s\n" % lib)
 
+        project = AutoProject.query.filter_by(id=self.id).first()
+        auto_lib = {"web": 'SeleniumLibrary',
+                    "app": 'AppiumLibrary',
+                    "http": 'RequestsLibrary'}
+        if project:
+            case_file.write("Library\t%s\n" % auto_lib[project.category])
+
         case_file.write("\nResource\tresource.txt\n")
         case_file.write("\nSuite Setup  Screenshot.Set Screenshot Directory\t%s\n" % images_dir)
         case_file.write("\nSuite Teardown  SeleniumLibrary.Close all browsers\n\n")
-
 
         case_file.write("*** Test Cases ***\n\n")
         suites = AutoSuite.query.filter_by(project_id=self.id).order_by(AutoSuite.id.asc()).all()
