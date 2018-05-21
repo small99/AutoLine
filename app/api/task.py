@@ -81,7 +81,7 @@ class Task(Resource):
         if os.path.exists(output_dir + "/report.html"):
             tree = ET.parse(output_dir + "/output.xml")
             root = tree.getroot()
-            passed = root.find("./statistics/suite/stat").attrib["pass"]
+            #passed = root.find("./statistics/suite/stat").attrib["pass"]
             fail = root.find("./statistics/suite/stat").attrib["fail"]
 
             if int(fail) != 0:
