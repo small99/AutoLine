@@ -70,7 +70,7 @@ class Report:
                             image = img[0]
                     else:
                         text = text + msg.text + "<br>"
-                print(text)
+                #print(text)
                 """    
                 msg = kw.find("msg")
                 if msg is not None:

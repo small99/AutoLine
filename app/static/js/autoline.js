@@ -195,7 +195,7 @@ function addReportTab(project_id, build_no){
         refreshTab({title: title, url: url});
     }
     else {
-        var content='<iframe scrolling="yes" frameborder="0"  src="{0}" style="width:100%;height:740px;"></iframe>'.lym_format(url);
+        var content='<iframe scrolling="yes" frameborder="0"  src="{0}" style="width:100%;height:960px;"></iframe>'.lym_format(url);
         editor_tabs.tabs('add',{
             title: '详细报告',
             closable: true,
