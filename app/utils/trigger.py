@@ -35,11 +35,11 @@ class Trigger:
                 'url': self.app.config["TRIGGER_DATABASE_URL"] #os.environ.get('TRIGGER_DATABASE_URL')
             },
             'apscheduler.executors.processpool': {
-                'type': 'processpool',
+                'type': 'threadpool',
                 'max_workers': '30'
             },
             'apscheduler.job_defaults.coalesce': 'false',
-            'apscheduler.job_defaults.max_instances': '20',
+            'apscheduler.job_defaults.max_instances': '4',
             'apscheduler.timezone': 'UTC',
         })
 

@@ -191,13 +191,6 @@ class Runner:
                 # print(command)
 
             self._process = subprocess.Popen(command, shell=shell, stdout=self._out_fd, stderr=subprocess.STDOUT)
-            # -x result/output.xml -l result/log.html -r result/report.html
-            #command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
-            #self._out_fd = open(output_dir + "/logs.log", "a+")
-            #self._process = subprocess.Popen(command, shell=False, stdout=self._out_fd, stderr=subprocess.STDOUT)
-            #self._process = Process(command)
-
-            #self._process.start()
 
         except Exception as e:
             print(str(e))
