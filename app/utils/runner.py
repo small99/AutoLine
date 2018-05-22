@@ -176,7 +176,7 @@ class Runner:
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
             output_dir = output_dir.replace("\\", "/")
-            self._out_fd = open(output_dir + "/logs.log", "a+")
+            self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
             shell = False
             if "Windows" in platform.platform():
                 command = "pybot -d %s -L DEBUG -N %s %s/testcase.robot" % (output_dir, name, output_dir)
