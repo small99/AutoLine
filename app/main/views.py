@@ -11,6 +11,7 @@ Email: lymking@foxmail.com
 """
 
 import os
+import platform
 import codecs
 from flask import render_template, send_file, current_app
 from flask_login import login_required, current_user, logout_user
@@ -113,9 +114,13 @@ def run_logs(project_id, build_no):
     log_path = log_path.replace("\\", "/")
     logs = "还没捕获到日志信息^_^"
     if os.path.exists(log_path):
-        f = codecs.open(log_path, "r", "utf-8")
+        if "Windows" in platform.platform():
+            f = codecs.open(log_path, "r", "cp936")
+        else:
+            f = codecs.open(log_path, "r", "utf-8")
+
         logs = f.read()
-        print(logs)
+        #print(logs)
         f.close()
         """
         app = current_app._get_current_object()

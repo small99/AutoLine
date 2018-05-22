@@ -138,13 +138,15 @@ class Runner:
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
             output_dir = output_dir.replace("\\", "/")
-            self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
+
             # -x result/output.xml -l result/log.html -r result/report.html
             shell = False
             if "Windows" in platform.platform():
+                self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "cp936")
                 command = "pybot -d %s -L DEBUG -N %s %s/testcase.robot" % (output_dir, name, output_dir)
                 shell = True
             else:
+                self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
                 command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name, "%s/testcase.robot" % output_dir]
                 #print(command)
 
@@ -176,12 +178,14 @@ class Runner:
 
             output_dir = os.getcwd() + "/logs/%s/%s" % (self.project_id, self.build_no)
             output_dir = output_dir.replace("\\", "/")
-            self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
+
             shell = False
             if "Windows" in platform.platform():
+                self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "cp936")
                 command = "pybot -d %s -L DEBUG -N %s %s/testcase.robot" % (output_dir, name, output_dir)
                 shell = True
             else:
+                self._out_fd = codecs.open(output_dir + "/logs.log", "a+", "utf-8")
                 command = ["pybot", "-d", "%s" % output_dir, "-L", "DEBUG", "-N", "%s" % name,
                            "%s/testcase.robot" % output_dir]
                 # print(command)
