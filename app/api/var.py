@@ -16,7 +16,7 @@ from flask_restful import Resource, reqparse
 from flask_login import current_user
 from sqlalchemy import and_
 
-from ..models import AutoSuite, AutoVar, User
+from ..models import AutoSuite, AutoVar, User, AutoObject
 from .. import db
 
 
@@ -79,8 +79,20 @@ class Var(Resource):
         result = {"status": "success",
                   "msg": "操作成功"}
 
+        a_object = AutoObject.query.filter_by(id=args["object_id"]).first()
+        if a_object is not None:
+            project_id = a_object.project_id
+            objs = AutoObject.query.filter_by(project_id=project_id).all()
+            for obj in objs:
+                var = AutoVar.query.filter(and_(AutoVar.name == args["name"],
+                                                AutoVar.object_id == obj.id)).first()
+                if var is not None:
+                    result["status"] = "fail"
+                    result["msg"] = "变量名[%s]重复" % args["name"]
+
         var = AutoVar.query.filter(and_(AutoVar.name == args["name"],
                                         AutoVar.object_id == args["object_id"])).first()
+
         if var is None:
             try:
                 var = AutoVar(name=args["name"],
