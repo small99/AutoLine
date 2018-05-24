@@ -68,7 +68,7 @@ class ProductionConfig(Config):
     #DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') + "?charset=utf8" # or 'sqlite:///' + os.path.join(basedir, 'AutoLine.sqlite')
     #SQLALCHEMY_ECHO = True
-    TRIGGER_DATABASE_URL = os.environ.get('TRIGGER_DATABASE_URL') + "?charset=utf8"
+    TRIGGER_DATABASE_URL = os.environ.get('TRIGGER_DATABASE_URL')
 
 
     @classmethod
