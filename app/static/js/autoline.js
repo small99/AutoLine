@@ -302,6 +302,18 @@ function test_run(category){
     }
 }
 
+function test_frame_run(id, category){
+    $.ajax({
+        type : 'get',
+        url : '/test_run/{0}/{1}'.lym_format(category, id),
+        success : function(data, textStatus, request) {
+            parent.addTaskTab('查看任务', '/task/{0}'.lym_format(id), 'icon-task');
+        }
+    });
+}
+
+
+
 function debug_run(){
     var node = $('#project_tree').tree('getSelected');
     addTaskTab("调试运行", "/debug/{0}".lym_format(node.attributes["id"]), "icon-debug");

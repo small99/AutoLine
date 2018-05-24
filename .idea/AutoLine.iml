@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="AutoBeat" />
+    <orderEntry type="module" module-name="WeAuto" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="py.test" />

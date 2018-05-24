@@ -81,3 +81,8 @@ function delete_project(){
         show_msg("提示", "请选择要删除的项目");
     }
 }
+
+function run_project_manage(value, row, index){
+    console.log(row);
+    return "<a href=\"#\" class=\"easyui-linkbutton\" data-options=\"iconCls:'icon-task'\" onclick=\"parent.test_frame_run('{0}', '{1}');\">运行</a>".lym_format(row.id, row["分类"]);
+}
