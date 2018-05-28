@@ -296,9 +296,17 @@ function test_run(category){
             type : 'get',
             url : '/test_run/{0}/{1}'.lym_format(category, node.attributes["id"]),
             success : function(data, textStatus, request) {
+                var d = JSON.parse(data);
+                if(d["status"] == "success"){
+
+                    show_msg("提示信息", d["msg"]);
+                    addManageTab('查看任务', '/task', 'icon-task');
+                }
+                else{
+                    show_msg("提示信息", d["msg"]);
+                }
             }
         });
-        addManageTab('查看任务', '/task', 'icon-task');
     }
 }
 
@@ -307,12 +315,17 @@ function test_frame_run(id, category){
         type : 'get',
         url : '/test_run/{0}/{1}'.lym_format(category, id),
         success : function(data, textStatus, request) {
-            parent.addTaskTab('查看任务', '/task/{0}'.lym_format(id), 'icon-task');
+            var d = JSON.parse(data);
+            if(d["status"] == "success"){
+                show_msg("提示信息", d["msg"]);
+                parent.addTaskTab('查看任务', '/task/{0}'.lym_format(id), 'icon-task');
+            }
+            else{
+                show_msg("提示信息", d["msg"]);
+            }
         }
     });
 }
-
-
 
 function debug_run(){
     var node = $('#project_tree').tree('getSelected');

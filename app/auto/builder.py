@@ -30,6 +30,7 @@ class Builder:
         self.build_no = 1
         self.project_name = ""
         self.task_dir = ""
+        self.has_case = False
 
     def build(self):
         self.build_task()
@@ -125,6 +126,7 @@ class Builder:
                 case_file.write("%d-%d %s.%s\n" % (suite.id, case.id, suite.name, case.name))
                 steps = AutoStep.query.filter_by(case_id=case.id).order_by(AutoStep.id.asc()).all()
                 for step in steps:
+                    self.has_case = True
                     case_file.write("\t%s\t%s\t%s\t%s\t%s\n" % (
                         step.keyword,
                         step.param_1, step.param_2, step.param_3, step.param_4
@@ -134,6 +136,9 @@ class Builder:
 
         case_file.close()
 
+    def has_test_case(self):
+
+        return self.has_case
 
     """
     def test_run(self, app, user_id):

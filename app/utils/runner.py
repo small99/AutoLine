@@ -83,37 +83,27 @@ def run_process(category, id):
     builder = Builder(id)
     builder.build()
 
-    runner = Runner(builder.id, builder.build_no)
-    if category == "auto":
-        runner.auto_run()
-    else:
-        runner.run()
+    if builder.has_test_case():
 
-    app = current_app._get_current_object()
-
-    app.config["TRIGGER"].update_job(id)
-
-    app.config["RUNNERS"].append({
-        "project_id": builder.id,
-        "task_id": builder.build_no,
-        "runner": runner
-    })
-    """
-    for r in app.config["RUNNERS"]:
-        print("get running logs: %s %s" % (r["project_id"], r["task_id"]))
-        p = r["runner"]
-        while p._process.poll() is None:
-            line = p._process.stdout.readline()
-            line = line.strip()
-            if line:
-                print('Subprogram output: [{}]'.format(line.decode()))
-        if p._process.returncode == 0:
-            print('Subprogram success')
+        runner = Runner(builder.id, builder.build_no)
+        if category == "auto":
+            runner.auto_run()
         else:
-            print('Subprogram failed')
-    """
+            runner.run()
 
-    return json.dumps({"status": "success", "msg": "任务启动成功"})
+        app = current_app._get_current_object()
+
+        app.config["TRIGGER"].update_job(id)
+
+        app.config["RUNNERS"].append({
+            "project_id": builder.id,
+            "task_id": builder.build_no,
+            "runner": runner
+        })
+
+        return json.dumps({"status": "success", "msg": "任务启动成功"})
+    else:
+        return json.dumps({"status": "fail", "msg": "项目中没有创建关键字步骤，任务启动失败，请新增关键字步骤！！！"})
 
 
 class Runner:
