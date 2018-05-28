@@ -60,7 +60,7 @@
 	</table>
 	<div id="create_project_win" class="easyui-window" title="创建项目"
          data-options="modal:true,closed:true,iconCls:'icon-add'"
-         style="width:500px;height:360px;padding:10px;">
+         style="width:500px;height:380px;padding:10px;">
         <form id="create_project_fm" action="/api/v1/project/" method="post">
 
             <div style="margin-bottom:20px">
@@ -83,8 +83,11 @@
             <div style="margin-bottom:20px">
                 <input name="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:48px;">
             </div>
-            <div style="margin-bottom:20px">
-                <input name="cron" class="easyui-textbox" label="cron:" labelPosition="left" style="width:100%;height:32px;">
+            <div style="margin-bottom:10px">
+                <input name="cron" class="easyui-textbox" label="cron:" labelPosition="left" style="width:100%;height:32px;" required>
+            </div>
+            <div style="margin-bottom:10px;margin-top: 5px;">
+                cron格式:  分 时 天 月 星期  | 示例：每半小时调度一次: */30 * * * *
             </div>
             <input hidden name="method" value="create">
             <div style="text-align:center;margin-bottom:20px">
