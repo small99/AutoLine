@@ -74,13 +74,17 @@ class Keyword(Resource):
         objects = AutoObject.query.filter_by(project_id=project_id).order_by(AutoObject.id.asc()).all()
 
         for obj in objects:
-            vars = self.get_vars(obj.id)
+            variables = self.get_vars(obj.id)
+            if len(variables) == 0:
+                state = "open"
+            else:
+                state = "closed"
             children.append({
                 "id": "objects_%s" % obj.id,
                 "text": obj.name,
                 "iconCls": "icon-object",
-                "state": "closed",
-                "children": vars
+                "state": state,
+                "children": variables
 
             })
 
@@ -88,8 +92,8 @@ class Keyword(Resource):
 
     def get_vars(self, object_id):
         children = []
-        vars = AutoVar.query.filter_by(object_id=object_id).order_by(AutoVar.id.asc()).all()
-        for var in vars:
+        variables = AutoVar.query.filter_by(object_id=object_id).order_by(AutoVar.id.asc()).all()
+        for var in variables:
             children.append({
                 "id": "var_%s" % var.id,
                 "text": var.name,

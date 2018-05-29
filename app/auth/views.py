@@ -19,10 +19,10 @@ from ..models import User
 from ..email import send_email
 
 
-@auth.before_app_request
-def before_request():
-    if not current_user.is_anonymous():
-        current_user.ping()
+#@auth.before_app_request
+#def before_request():
+#    if not current_user.is_anonymous():
+#        current_user.ping()
 
 
 @auth.route('/login/', methods=['POST'])
@@ -32,7 +32,9 @@ def login():
     user = User.query.filter_by(email=email).first()
 
     if user is not None and user.verify_password(password):
+
         login_user(user, True)
+        current_user.ping()
 
         return redirect(url_for("main.dashboard"))
 

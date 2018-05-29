@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="WeAuto" />
+    <orderEntry type="module" module-name="AutoBeat" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="py.test" />
