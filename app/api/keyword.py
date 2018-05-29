@@ -48,7 +48,7 @@ class Keyword(Resource):
     def post(self):
         args = self.parser.parse_args()
 
-        keyword_list = []
+        #keyword_list = []
         if args["project_id"] != -1:
             children = []
             project = AutoProject.query.filter_by(id=args["project_id"]).first()
@@ -63,7 +63,7 @@ class Keyword(Resource):
                 "children": children
             }]
 
-            keyword_list.extend(parser())
+            keyword_list.extend(parser(project.category))
 
             return keyword_list
 

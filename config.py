@@ -103,3 +103,14 @@ config = {
 
     "default": DevelopmentConfig
 }
+
+
+# 关键字自定义配置
+USER_KEYS = {
+    "web": ["BuiltIn", "Collections", "String", "DateTime", "Screenshot", "SeleniumLibrary"],
+    "app": ["BuiltIn", "Collections", "String", "DateTime", "Screenshot", "AppiumLibrary"],
+    "http": ["BuiltIn", "Collections", "String", "DateTime", "RequestsLibrary"],
+    "all": ["BuiltIn", "Collections", "String", "Screenshot", "DateTime",
+            "SeleniumLibrary", "AppiumLibrary", "RequestsLibrary",
+            "Process", "Telnet", "OperatingSystem"]
+}

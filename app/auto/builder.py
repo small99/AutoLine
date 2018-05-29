@@ -116,7 +116,7 @@ class Builder:
 
         case_file.write("\nResource\tresource.txt\n")
         case_file.write("\nSuite Setup  Screenshot.Set Screenshot Directory\t%s\n" % images_dir)
-        case_file.write("\nSuite Teardown  SeleniumLibrary.Close all browsers\n\n")
+        case_file.write("\nSuite Teardown  SeleniumLibrary.Close All Browsers\n\n")
 
         case_file.write("*** Test Cases ***\n\n")
         suites = AutoSuite.query.filter_by(project_id=self.id).order_by(AutoSuite.id.asc()).all()

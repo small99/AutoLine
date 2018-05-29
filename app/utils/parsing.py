@@ -13,16 +13,18 @@ Email: lymking@foxmail.com
 import os
 import xml.etree.ElementTree as ET
 
+from config import USER_KEYS
 
-def parser():
+
+def parser(category="web"):
     keyword_list = []
     cwd = os.getcwd() + "/doc"
-    keys = os.listdir(cwd)
-    for k in keys:
-        path = cwd + '/%s' % k
+    for k in USER_KEYS[category]:
+        path = cwd + "/%s.xml" % k
         tree = ET.parse(path)
         root = tree.getroot()
         name = root.attrib["name"]
+
         children = []
         for kw in root.iter("kw"):
             # 关键字
