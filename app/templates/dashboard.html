@@ -12,6 +12,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/chart.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/autoline.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/object.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/user_keyword.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/suite.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/case.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/var.js') }}"></script>
@@ -134,7 +135,7 @@
         </div>
     </div>
 
-    <div id="project_menu" class="easyui-menu" style="width:120px;">
+    <div id="project_menu" class="easyui-menu" style="width:160px;">
         <div onclick="addManageTab('查看任务', '/task', 'icon-task');" data-options="iconCls:'icon-task'">查看任务</div>
 		<div class="menu-sep"></div>
         <div onclick="debug_run();" data-options="iconCls:'icon-debug'">调试</div>
@@ -145,6 +146,9 @@
         <div class="menu-sep"></div>
         <div onclick="show_obj_win('object_win', 'object_fm', 'create');" data-options="iconCls:'icon-object'">创建对象集</div>
         <div onclick="addManageTab('对象集管理', '/manage/object', 'icon-object');" data-options="iconCls:'icon-object'">管理对象集</div>
+        <div class="menu-sep"></div>
+        <div onclick="show_user_keyword_suite_win('user_keyword_win', 'user_keyword_fm', 'create');" data-options="iconCls:'icon-user_keyword'">创建自定义关键字集</div>
+        <div onclick="addManageTab('自定义关键字集管理', '/manage/user_keyword', 'icon-user_keyword');" data-options="iconCls:'icon-user_keyword'">管理自定义关键字集</div>
         <div class="menu-sep"></div>
         <div onclick="show_obj_win('suite_win', 'suite_fm', 'create');" data-options="iconCls:'icon-suite'">创建套件</div>
         <div onclick="addManageTab('套件管理', '/manage/suite', 'icon-suite');" data-options="iconCls:'icon-suite'">管理套件</div>
@@ -161,6 +165,20 @@
         <div class="menu-sep"></div>
         <div onclick="expand()">展开</div>
 		<div onclick="collapse()">折叠</div>
+	</div>
+    <div id="keyword_menu" class="easyui-menu" style="width:120px;">
+        <div onclick="show_keyword_win('keyword_win', 'keyword_fm', 'create');" data-options="iconCls:'icon-step'">创建关键字</div>
+        <div onclick="addManageTab('关键字管理', '/manage/keyword', 'icon-step');" data-options="iconCls:'icon-step'">管理关键字</div>
+		<div class="menu-sep"></div>
+		<div onclick="show_user_keyword_suite_win('user_keyword_win', 'user_keyword_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_user_keyword_suite_win('user_keyword_win', 'user_keyword_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
+        <div class="menu-sep"></div>
+        <div onclick="expand()">展开</div>
+		<div onclick="collapse()">折叠</div>
+	</div>
+    <div id="user-keyword_menu" class="easyui-menu" style="width:120px;">
+		<div onclick="show_keyword_win('keyword_win', 'keyword_fm', 'edit');" data-options="iconCls:'icon-edit'">编辑</div>
+		<div onclick="show_keyword_win('keyword_win', 'keyword_fm', 'delete');" data-options="iconCls:'icon-remove'">删除</div>
 	</div>
     <div id="suite_menu" class="easyui-menu" style="width:120px;">
         <div onclick="show_case_win('case_win', 'case_fm', 'create');" data-options="iconCls:'icon-case'">新增用例</div>
@@ -206,6 +224,62 @@
             <input hidden name="project_id" id="project_id" value="-1">
             <div style="text-align:center;margin-bottom:20px">
                 <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_object('object_win', 'object_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="user_keyword_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-user_keyword'"
+         style="width:500px;height:230px;padding:10px;">
+        <form id="user_keyword_fm" action="/api/v1/user_keyword/" method="post">
+            <div style="margin-bottom:20px">
+                <input name="name" id="name" class="easyui-textbox" label="名称:" labelPosition="left" style="width:100%;height:32px;">
+            </div>
+            <div style="margin-bottom:20px">
+                <input name="desc" id="desc" class="easyui-textbox" label="描述:" labelPosition="left" multiline="true" style="width:100%;height:64px;">
+            </div>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="category" id="category" value="keyword">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="project_id" id="project_id" value="-1">
+            <div style="text-align:center;margin-bottom:20px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_user_keyword_suite('user_keyword_win', 'user_keyword_fm');">创建</a>
+            </div>
+        </form>
+    </div>
+    <div id="keyword_win" class="easyui-window" title=""
+         data-options="modal:true,closed:true,iconCls:'icon-keyword'"
+         style="width:740px;height:430px;padding:10px;">
+        <form id="keyword_fm">
+
+            <div style="margin-bottom:10px">
+                <input name="keyword" id="keyword" class="easyui-textbox" label="关键字:" labelPosition="left" style="width:100%;height:32px;" required>
+            </div>
+            <table id="keyword_params" class="easyui-datagrid" style="display:'';width:710px;height:280px;"
+                   data-options="
+                   singleSelect:true
+                    ">
+                <thead>
+                    <tr>
+                        <th data-options="field:'param_0', width:20"></th>
+                        <th data-options="field:'param_1',width:170,editor:{type:'combotree',options:{editable: true, onShowPanel: onShowKeywordPanel}}">参数1</th>
+                        <th data-options="field:'param_2',width:170,editor:{type:'combotree',options:{editable: true, onShowPanel: onShowKeywordPanel}}">参数2</th>
+                        <th data-options="field:'param_3',width:170,editor:{type:'combotree',options:{editable: true, onShowPanel: onShowKeywordPanel}}">参数3</th>
+                        <th data-options="field:'param_4',width:170,editor:{type:'combotree',options:{editable: true, onShowPanel: onShowKeywordPanel}}">参数4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(10) %}
+                    <tr>
+                        <td>{{ loop.index }}</td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <input hidden name="method" id="method" value="create">
+            <input hidden name="id" id="id" value="-1">
+            <input hidden name="suite_id" id="suite_id" value="-1">
+            <div style="text-align:center;margin-top:10px">
+                <a href="#" class="easyui-linkbutton" style="width:100px;height:32px" onclick="manage_keyword('keyword_win', 'keyword_fm');">创建</a>
             </div>
         </form>
     </div>
@@ -353,6 +427,21 @@
                       return /^[\$|&|@]\{[A-Za-z0-9_]+\}$/.test(value);
                   },
                   message : '变量创建规则<br/>单个变量:${变量名}<br/>列表变量:@{变量名}<br/>字典变量:&{变量名}<br/>变量名只允许：大小写字母、数字或下划线'
+            }
+        });
+        var ii=-1;
+        $('#keyword_params').datagrid({
+            onClickCell: function(index,field,value){
+                if(ii != -1){
+                    $(this).datagrid('endEdit', ii);
+                    ii=-1;
+                }
+                else{
+                    ii = index;
+                    $(this).datagrid('beginEdit', index);
+                    //var ed = $(this).datagrid('getEditor', {index:index,field:field});
+                    //$(ed.target).focus();
+                }
             }
         });
     </script>

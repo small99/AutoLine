@@ -62,3 +62,7 @@ api.add_resource(Users, "/user/")
 
 from .role import Roles
 api.add_resource(Roles, "/role/")
+
+from .user_keyword import UserKeywordSuite, UserKeyword
+api.add_resource(UserKeywordSuite, "/user_keyword_suite/")
+api.add_resource(UserKeyword, "/user_keyword/")

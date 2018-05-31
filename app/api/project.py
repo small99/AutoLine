@@ -15,7 +15,7 @@ from flask import url_for, current_app
 from flask_restful import Resource, reqparse
 from flask_login import current_user
 
-from ..models import AutoProduct, AutoProject, AutoSuite, AutoObject, AutoCase, AutoVar, AutoStep, User
+from ..models import AutoProduct, AutoProject, AutoSuite, AutoObject, AutoUserKeywordSuite, AutoUserKeyword, AutoCase, AutoVar, AutoStep, User
 from .. import db
 
 
@@ -72,6 +72,10 @@ class Project(Resource):
             if project:
                 # 对象集
                 children.extend(self.__get_object_suites_by_project_id(project.id))
+
+                # 自定义关键字
+                children.extend(self.__get_keyword_suites_by_project_id(project.id))
+
                 # 套件集
                 children.extend(self.__get_suites_by_project_id(project.id))
 
@@ -314,6 +318,50 @@ class Project(Resource):
             })
 
         return children
+
+    def __get_keyword_suites_by_project_id(self, id):
+        children = []
+        suites = AutoUserKeywordSuite.query.filter_by(project_id=id).order_by(AutoUserKeywordSuite.id.asc()).all()
+
+        for suite in suites:
+            keys = self.__get_keyword_by_suite_id(suite.id)
+            children.append({
+                "id": suite.id,
+                "text": suite.name,
+                "iconCls": "icon-user_keyword",
+                "attributes": {
+                    "category": suite.category,
+                    "id": suite.id,
+                    "project_id": suite.project_id,
+                    "name": suite.name,
+                    "desc": suite.desc
+                },
+                "children": keys
+
+            })
+
+        return children
+
+
+    def __get_keyword_by_suite_id(self, id):
+        print(id)
+        children = []
+        keys = AutoUserKeyword.query.filter_by(keyword_suite_id=id).order_by(AutoUserKeyword.id.asc()).all()
+        for k in keys:
+            children.append({
+                "id": k.id,
+                "text": k.keyword,
+                "iconCls": "icon-step",
+                "attributes": {
+                    "category": "user-keyword",
+                    "id": k.id,
+                    "suite_id": k.keyword_suite_id,
+                    "keyword": k.keyword,
+                    "params": k.params
+                }})
+
+        return children
+
 
     def __get_var_by_object_id(self, id):
         children = []

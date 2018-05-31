@@ -389,16 +389,38 @@ class AutoObject(db.Model):
     update_timestamp = db.Column(db.DateTime, index=True, default=datetime.now())
 
 
-class AutoKeyword(db.Model):
+class AutoUserKeywordSuite(db.Model):
+    """
+        关键字套件
+    """
+    __tablename__ = "auto_user_keyword_suite"
+    id = db.Column(db.Integer, primary_key=True)
+    project_id = db.Column(db.Integer)
+    category = db.Column(db.String(64), index=True)
+    prev = db.Column(db.Integer)  # 兄对象 id
+    name = db.Column(db.String(64), index=True)
+    desc = db.Column(db.String(128), index=True)
+    tags = db.Column(db.String(64), index=True)
+    enable = db.Column(db.Boolean, default=True, index=True)
+    setup = db.Column(db.Text)
+    teardown = db.Column(db.Text)
+
+    create_author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    create_timestamp = db.Column(db.DateTime, index=True, default=datetime.now())
+    update_author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    update_timestamp = db.Column(db.DateTime, index=True, default=datetime.now())
+
+
+class AutoUserKeyword(db.Model):
     """
         关键字
     """
-    __tablename__ = "auto_keyword"
+    __tablename__ = "auto_user_keyword"
     id = db.Column(db.Integer, primary_key=True)
-    object_id = db.Column(db.Integer)
-    #object_id = db.Column(db.Integer, db.ForeignKey('auto_object.id'))
+    keyword_suite_id = db.Column(db.Integer)
     prev = db.Column(db.Integer)  # 兄keyword id
-    keyword = db.Column(db.Text)
+    keyword = db.Column(db.String(256), index=True)
+    params = db.Column(db.Text)  # json串
 
     create_author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     create_timestamp = db.Column(db.DateTime, index=True, default=datetime.now())

@@ -18,7 +18,7 @@ from flask_login import current_user
 from sqlalchemy import and_
 #from robot.api import TestSuiteBuilder, TestSuite, ResultWriter, TestData, TestCaseFile, ResourceFile
 from .. import db
-from ..models import AutoProject, AutoSuite, AutoObject, AutoCase, AutoStep, AutoVar, AutoTask
+from ..models import AutoProject, AutoSuite, AutoObject, AutoCase, AutoStep, AutoVar, AutoTask, AutoUserKeywordSuite, AutoUserKeyword
 
 
 class Builder:
@@ -80,6 +80,18 @@ class Builder:
             variables = AutoVar.query.filter_by(object_id=obj.id).order_by(AutoVar.id.asc()).all()
             for var in variables:
                 resource_file.write("%s    %s\n" % (var.name, var.value))
+
+            resource_file.write("\n\n")
+
+        resource_file.write("*** Keywords ***\n")
+        suites = AutoUserKeywordSuite.query.filter_by(project_id=self.id).order_by(AutoUserKeywordSuite.id.asc()).all()
+        for suite in suites:
+            keywords = AutoUserKeyword.query.filter_by(keyword_suite_id=suite.id).order_by(AutoUserKeyword.id.asc()).all()
+            for key in keywords:
+                resource_file.write("%s\n" % key.keyword)
+                params = eval(key.params)
+                for p in params:
+                    resource_file.write("\t%s\t%s\t%s\t%s\n" % (p["param_1"], p["param_2"], p["param_3"], p["param_4"]))
 
             resource_file.write("\n\n")
 

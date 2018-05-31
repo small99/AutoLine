@@ -39,7 +39,7 @@ def parser(category="web"):
             doc = kw.find("doc").text
 
             children.append({
-                "id": name + keyword,
+                "id": keyword,
                 "text": keyword,
                 "attributes": {
                     "params": params,

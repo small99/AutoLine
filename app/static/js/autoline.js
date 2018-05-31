@@ -85,6 +85,11 @@ function init_project_list(){
 });
 }
 
+function refresh_project_tree(){
+    var root = $('#project_tree').tree("getRoot");
+    load_project_tree(root.id);
+}
+
 function load_project_tree(id){
    $.ajax({
         type : 'get',
@@ -127,6 +132,9 @@ function onDblClick(node) {
     }
     else if(node.attributes["category"]=="suite"){
         addManageTab('用例管理', '/manage/case', 'icon-case');
+    }
+    else if(node.attributes["category"]=="keyword"){
+        addManageTab('自定义关键字管理', '/manage/keyword', 'icon-user_keyword');
     }
     else if(node.attributes["category"]=="case"){
         addManageTab('用例步骤', '/manage/step', 'icon-step');
