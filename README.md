@@ -11,6 +11,9 @@
     - [配置文件说明](#配置文件说明)
     - [初始化及运行](#初始化及运行)
     - [外网访问运行方式](#外网访问运行方式)
+    - [升级说明](#升级说明)
+        - [一般版本升级](#一般版本升级)
+        - [重大版本升级](#重大版本升级)
     - [如何支持不同的浏览器](#如何支持不同的浏览器)
     - [截图](#截图)
     - [支持与联系](#支持与联系)
@@ -161,6 +164,38 @@ TRIGGER_DATABASE_URL=mysql+pymysql://root:123456@127.0.0.1/autoline
 使用默认账号： autoline@126.com/123456 登录如图：
 
 ![start](./app/static/images/demo/start.png)  
+
+## 升级说明
+
+### 一般版本升级
+
+如果你使用的是git，直接用下列命令升级即可
+
+> git pull
+
+实现源码升级
+
+否则需要从github下载源码进行覆盖升级！！！
+
+### 重大版本升级
+
+主要涉及了数据模型的修改出了代码进行升级外，还需要重新升级数据模型，源码升级同上，下面为数据库模型升级：
+
+1. 删除本地的migrations目录
+
+2. 清空数据库表alembic_version中所有内容
+
+3. 按以下步骤在命令行中使用下列命令升级数据库模型
+
+> python manage.py db init
+
+> python manage.py db migrate
+
+> python manage.py db upgrade
+
+4. 升级完成启动服务
+
+> python manage.py runserver
 
 ## 如何支持不同的浏览器
 
