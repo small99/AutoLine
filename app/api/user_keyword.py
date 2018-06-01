@@ -248,3 +248,21 @@ class UserKeyword(Resource):
                 result["msg"] = "编辑用户关键字[id-%s]失败：%s" % (args["id"], str(e))
 
         return result
+
+    def __delete(self, args):
+        result = {"status": "success",
+                  "msg": "操作成功"}
+
+        keyword = AutoUserKeyword.query.filter_by(id=args["id"]).first()
+        if keyword is None:
+            result["status"] = "fail"
+            result["msg"] = "未找到要删除的用户关键字id"
+        else:
+            try:
+                db.session.delete(keyword)
+                db.session.commit()
+            except Exception as e:
+                result["status"] = "fail"
+                result["msg"] = "删除用户关键字[id-%s]失败：%s" % (args["id"], str(e))
+
+        return result
