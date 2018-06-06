@@ -21,4 +21,4 @@ robotframework-requests==0.4.7
 robotframework-appiumlibrary==1.4.6
 pymysql==0.8.1
 pillow==5.1.0
-mysql-connector-python=8.0.11
+mysql-connector-python==8.0.11
