@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5ae474a-e2fe-4b02-bccd-d8be882227ae" name="Default" comment="">
+    <list default="true" readonly="true" id="c5ae474a-e2fe-4b02-bccd-d8be882227ae" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AutoLine.iml" afterPath="$PROJECT_DIR$/.idea/AutoLine.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/.pytest_cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/.pytest_cache/v" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/.pytest_cache/v/cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/.pytest_cache/v/cache/lastfailed" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/data" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/data/nanfeng" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/data/nanfeng/data.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/data/sichuan" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/data/sichuan/data.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/logs/assets" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/logs/assets/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/logs/pytest-zzb-logs.log" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,116 +29,148 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/templates/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="130" column="31" lean-forward="false" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CNAME" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CNAME">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AutoBeat/utils/file.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/css/auto.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diydom.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/zTree_v3/demo/cn/super/diydom.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="98" column="20" lean-forward="false" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/js/auto.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blueprints.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/blueprints.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.49737436">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="blueprints.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/blueprints.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="551">
+                  <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#93#165#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="project.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/api/project.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="599">
+                  <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#94#151#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/templates/login.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="630">
+                  <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/requirements.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/templates/dashboard.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#1;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#form#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#1;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="demo.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/demo.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/api/auth.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="431">
+                  <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="39" selection-end-column="66" />
+                  <folding>
+                    <element signature="e#93#150#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="auto.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/js/auto.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="203">
+                  <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>test</find>
-      <find>Runner</find>
-      <find>addViewImageTab</find>
-      <find>open</find>
-      <find>Take</find>
-      <find>show</find>
-      <find>run.png</find>
-      <find>dateutil</find>
-      <find>tz</find>
-      <find>SeleniumLibrary</find>
-      <find>o</find>
-      <find>object</find>
-      <find>user_keyword_win</find>
-      <find>var</find>
-      <find>aja</find>
-      <find>对象集</find>
-      <find>loa</find>
       <find>staitc</find>
       <find>signin-head</find>
       <find>Airflow</find>
@@ -135,6 +184,23 @@
       <find>project</find>
       <find>gif</find>
       <find>treeNode.id</find>
+      <find>202021</find>
+      <find>fn-left</find>
+      <find>{{</find>
+      <find>}}</find>
+      <find>DIV</find>
+      <find>A</find>
+      <find>addTab</find>
+      <find>ui-layout-west</find>
+      <find>header-footer</find>
+      <find>AutoBeat</find>
+      <find>current_app</find>
+      <find>serializeObject</find>
+      <find>show_msg</find>
+      <find>ajax</find>
+      <find>Jobs</find>
+      <find>username</find>
+      <find>json</find>
     </findStrings>
     <replaceStrings>
       <replace>link</replace>
@@ -153,6 +219,12 @@
       <replace>png</replace>
       <replace>tId</replace>
       <replace>treeNode.tId</replace>
+      <replace />
+      <replace>div</replace>
+      <replace>a</replace>
+      <replace>AutoLink</replace>
+      <replace>160</replace>
+      <replace>Project</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -164,28 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/app/templates/project.html" />
-        <option value="$PROJECT_DIR$/app/utils/runner.py" />
-        <option value="$PROJECT_DIR$/User Guide/User Guide/AutoLine源码组织结构.md" />
-        <option value="$PROJECT_DIR$/app/auth/views.py" />
-        <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/app/static/autoline-icon.css" />
-        <option value="$PROJECT_DIR$/app/templates/keyword.html" />
-        <option value="$PROJECT_DIR$/app/api/__init__.py" />
-        <option value="$PROJECT_DIR$/app/api/project.py" />
-        <option value="$PROJECT_DIR$/app/static/js/autoline.js" />
-        <option value="$PROJECT_DIR$/app/static/js/user_keyword.js" />
-        <option value="$PROJECT_DIR$/app/api/keyword.py" />
-        <option value="$PROJECT_DIR$/app/auto/builder.py" />
-        <option value="$PROJECT_DIR$/app/utils/parsing.py" />
-        <option value="$PROJECT_DIR$/User Guide/User Guide/升级说明.md" />
-        <option value="$PROJECT_DIR$/app/templates/dashboard.html" />
-        <option value="$PROJECT_DIR$/app/api/user_keyword.py" />
-        <option value="$PROJECT_DIR$/../AutoBeat/config.py" />
-        <option value="$PROJECT_DIR$/../AutoBeat/site/__init__.py" />
-        <option value="$PROJECT_DIR$/../AutoBeat/site/views.py" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/version.txt" />
         <option value="$PROJECT_DIR$/history.md" />
@@ -202,25 +252,47 @@
         <option value="$PROJECT_DIR$/../AutoBeat/auto/configuration.py" />
         <option value="$PROJECT_DIR$/../AutoBeat/auto/www/app.py" />
         <option value="$PROJECT_DIR$/../AutoBeat/AutoBeat.py" />
-        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/templates/login.html" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/../AutoBeat/.beats/users/AutoBeat/config.xml" />
         <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/css/dashboard.css" />
         <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/folding.html" />
         <option value="$PROJECT_DIR$/../AutoBeat/auto/www/blueprints.py" />
-        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/css/auto.css" />
         <option value="$PROJECT_DIR$/../AutoBeat/licenses/LICENSE-bootstrap" />
         <option value="$PROJECT_DIR$/../AutoBeat/utils/file.py" />
-        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/js/auto.js" />
-        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/CNAME" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/css/navbar-top-fixed.css" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/css/base.css" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/css/sign.css" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/templates/login.html" />
+        <option value="$PROJECT_DIR$/../AutoBeat20180608/auto/www/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/js/auto.js" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/static/css/auto.css" />
+        <option value="$PROJECT_DIR$/../AutoBeat/auto/www/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/static/css/auto.css" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/templates/editor.html" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/templates/tree_data1.json" />
+        <option value="$PROJECT_DIR$/../AutoLink/.link/users/AutoLink/config.json" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/settings.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/configuration.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/app.py" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/blueprints.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/api/auth.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/api/jobs.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/api/__init__.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/.beats/users/AutoLink/config.json" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/api/project.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/utils/file.py" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/static/js/auto.js" />
+        <option value="$PROJECT_DIR$/../AutoLink/auto/www/templates/login.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="2" />
-    <option name="y" value="23" />
+    <option name="y" value="173" />
     <option name="width" value="1438" />
     <option name="height" value="798" />
   </component>
@@ -240,7 +312,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
@@ -258,7 +330,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -267,55 +338,11 @@
               <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
               <item name="AutoLine" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name=".beats" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name=".beats" type="462c0819:PsiDirectoryNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name=".beats" type="462c0819:PsiDirectoryNode" />
-              <item name="jobs" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name=".beats" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name=".beats" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name="auto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoBeat" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,19 +358,19 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes" />
+      <recent name="$PROJECT_DIR$/../AutoLink/.beats/workspace" />
+      <recent name="$PROJECT_DIR$/../AutoLink/auto/www/templates" />
+      <recent name="$PROJECT_DIR$/../AutoLink/auto/www/static/img" />
+      <recent name="$PROJECT_DIR$/../AutoBeat/licenses" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../AutoLink/auto/www/templates" />
       <recent name="$PROJECT_DIR$/../AutoBeat" />
       <recent name="$PROJECT_DIR$/../AutoBeat/app" />
       <recent name="$PROJECT_DIR$/../AutoBeat/conf" />
       <recent name="$PROJECT_DIR$/app/static/images/demo" />
-      <recent name="$PROJECT_DIR$/User Guide" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../AutoBeat/licenses" />
-      <recent name="$PROJECT_DIR$/../AutoBeat/auto/www/templates" />
-      <recent name="$PROJECT_DIR$/../AutoBeat/app/templates" />
-      <recent name="$PROJECT_DIR$/../AutoBeat/app/static/img" />
-      <recent name="$PROJECT_DIR$/../AutoBeat" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -358,7 +385,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.file">
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="runserver" />
       <option name="PARENT_ENVS" value="true" />
@@ -372,24 +399,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AutoLine" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="file" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="runserver" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python3" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../AutoBeat/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="AutoBeat" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../AutoBeat/utils/file.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -413,22 +422,36 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.manage" />
-      <item index="1" class="java.lang.String" itemvalue="Python.file" />
-    </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.file" />
-        <item index="1" class="java.lang.String" itemvalue="Python.manage" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.manage" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/../projects/ZZBAuto" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/../projects/ZZBAuto" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$/../projects/ZZBAuto" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$/../projects/ZZBAuto" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -441,17 +464,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="23" width="1438" height="798" extended-state="0" />
+    <frame x="2" y="23" width="1438" height="798" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22582921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19689485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2916074" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24911785" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19519095" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19487908" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997155" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -471,414 +494,437 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/main/views.py</url>
+          <line>12</line>
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
+      <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/keymap/emacs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5571">
-          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/keymap/vim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/mode/python/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/mode/python/python.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/mode/yaml/yaml.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1484">
-          <caret line="116" column="23" lean-forward="true" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/activeline.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/anywordhint.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/bidi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/btree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="27" column="102" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/buffers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="22" column="65" lean-forward="true" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/closebrackets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/complete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/hardwrap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/changemode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/fullscreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/loadmode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/indentwrap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="82" lean-forward="true" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/folding.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/markselection.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="13" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/matchhighlighter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="96" column="71" lean-forward="true" selection-start-line="96" selection-start-column="2" selection-end-line="96" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/matchtags.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/merge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/multiplex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/panel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/placeholder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="30" column="69" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/preview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="76" column="6" lean-forward="true" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/requirejs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/rulers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/runmode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-364">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/simplemode.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/sublime.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/xmlcomplete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1219">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/vim.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-966">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/variableheight.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-439">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/tern.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-471">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/keymap/sublime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2062">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/codemirror-5.38.0/demo/simplescrollbars.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-559">
-          <caret line="7" column="67" lean-forward="false" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/blueprints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/zTree_v3/demo/cn/super/rightClickMenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="131" column="79" lean-forward="false" selection-start-line="131" selection-start-column="55" selection-end-line="131" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/zTree_v3/css/metroStyle/img/metro.png">
+    <entry file="file://$PROJECT_DIR$/app/static/images/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/zTree_v3/demo/cn/super/diydom.html">
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/logo.min.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/autoline-icon.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="98" column="20" lean-forward="false" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/css/auto.css">
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/css/auto.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/zTree_v3/log v3.x.txt">
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/templates/editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
+        <state relative-caret-position="180">
+          <caret line="12" column="76" lean-forward="true" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="98" column="35" lean-forward="true" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/settings.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/save.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/run.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/edit.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/img/delete.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/licenses/LICENSE-bootstrap">
+    <entry file="file://$PROJECT_DIR$/app/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="83">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/licenses/LICENSE-jquery">
+    <entry file="file://$PROJECT_DIR$/app/api/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="-196">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/utils/file.py">
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="541">
+          <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="55" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/static/js/auto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoBeat/auto/www/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="130" column="31" lean-forward="false" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CNAME">
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/configuration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding>
+            <element signature="e#93#107#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1016">
+          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="68" column="161" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="161" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="98" column="24" lean-forward="true" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/flask_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="e#94#123#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/color.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/icons/clear.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/icons/cancel.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/icons/blank.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/icons/back.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/icon.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/api/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="39" selection-end-column="66" />
+          <folding>
+            <element signature="e#93#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="73" column="31" lean-forward="false" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/autoline.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-438">
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/.beats/users/AutoLink/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/blueprints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+          <folding>
+            <element signature="e#93#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/.beats/workspace/AutoLink/App核心业务测试项目/suite01/testcase.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/.beats/workspace/AutoLink/App核心业务测试项目/suite01/resource.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/utils/file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/api/project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="e#94#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/templates/tree_data1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/lib/easyui/themes/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/static/js/auto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/auto/www/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
           <folding />
         </state>
       </provider>
