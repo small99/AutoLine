@@ -419,7 +419,7 @@ class AutoUserKeyword(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     keyword_suite_id = db.Column(db.Integer)
     prev = db.Column(db.Integer)  # 兄keyword id
-    keyword = db.Column(db.String(256), index=True)
+    keyword = db.Column(db.String(128), index=True)
     params = db.Column(db.Text)  # json串
 
     create_author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
