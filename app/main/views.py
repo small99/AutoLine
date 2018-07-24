@@ -21,6 +21,7 @@ from . import main
 from ..utils.runner import run_process, debug_run
 from ..utils.report import Report
 
+
 @main.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
@@ -30,6 +31,7 @@ def index():
 @main.route('/dashboard', methods=['GET'])
 def dashboard():
     return render_template('dashboard.html', user=current_user)
+
 
 @login_required
 @main.route('/logout', methods=['GET'])
@@ -132,6 +134,7 @@ def run_logs(project_id, build_no):
         """
 
     return render_template('logs.html', logs=logs)
+
 
 @login_required
 @main.route('/detail/<project_id>/<build_no>', methods=['POST'])
