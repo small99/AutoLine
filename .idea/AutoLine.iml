@@ -8,6 +8,7 @@
     <orderEntry type="module" module-name="AutoBeat" />
     <orderEntry type="module" module-name="ZZBAuto" />
     <orderEntry type="module" module-name="AutoBeat" />
+    <orderEntry type="module" module-name="AutoLink" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="py.test" />

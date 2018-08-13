@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AutoLine.iml" filepath="$PROJECT_DIR$/.idea/AutoLine.iml" />
       <module fileurl="file://$PROJECT_DIR$/../AutoLink/.idea/AutoLink.iml" filepath="$PROJECT_DIR$/../AutoLink/.idea/AutoLink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AutoLink/.idea/AutoLink.iml" filepath="$PROJECT_DIR$/../AutoLink/.idea/AutoLink.iml" />
       <module fileurl="file://$PROJECT_DIR$/../projects/WeAuto/.idea/WeAuto.iml" filepath="$PROJECT_DIR$/../projects/WeAuto/.idea/WeAuto.iml" />
       <module fileurl="file://$PROJECT_DIR$/../projects/ZZBAuto/.idea/ZZBAuto.iml" filepath="$PROJECT_DIR$/../projects/ZZBAuto/.idea/ZZBAuto.iml" />
     </modules>
