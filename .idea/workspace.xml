@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="c5ae474a-e2fe-4b02-bccd-d8be882227ae" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../AutoLink/INSTALL.md" afterPath="$PROJECT_DIR$/../AutoLink/INSTALL.md" />
       <change beforePath="$PROJECT_DIR$/../AutoLink/README.md" afterPath="$PROJECT_DIR$/../AutoLink/README.md" />
       <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/.pytest_cache" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../projects/ZZBAuto/.pytest_cache/v" afterPath="" />
@@ -23,12 +24,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../AutoLink/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="593">
-                <caret line="68" column="49" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+              <first_editor relative-caret-position="233">
+                <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -49,12 +50,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="INSTALL.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="INSTALL.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../AutoLink/INSTALL.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="525">
-                <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+              <first_editor relative-caret-position="480">
+                <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -229,10 +230,10 @@
         <option value="$PROJECT_DIR$/../AutoLink/version.txt" />
         <option value="$PROJECT_DIR$/../AutoLink/utils/help.py" />
         <option value="$PROJECT_DIR$/../AutoLink/AutoLink.py" />
-        <option value="$PROJECT_DIR$/../AutoLink/INSTALL.md" />
         <option value="$PROJECT_DIR$/../AutoLink/UPDATEING.md" />
         <option value="$PROJECT_DIR$/../AutoLink/driver/readme.md" />
         <option value="$PROJECT_DIR$/../AutoLink/README.md" />
+        <option value="$PROJECT_DIR$/../AutoLink/INSTALL.md" />
       </list>
     </option>
   </component>
@@ -848,17 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AutoLink/INSTALL.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="525">
-            <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../AutoLink/version.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -900,8 +890,19 @@
     <entry file="file://$PROJECT_DIR$/../AutoLink/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="593">
-            <caret line="68" column="49" lean-forward="true" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+          <first_editor relative-caret-position="233">
+            <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutoLink/INSTALL.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="480">
+            <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor />
