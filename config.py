@@ -22,7 +22,7 @@ choice = ("QWERTYUIOPASDFGHJKLMNBVCXZqazxswedcvfrtgbnhyujmkiolp1234567890!@#$%^&
 class Config:
     if os.path.exists('.env'):
         print('Import environment from .env')
-        for line in codecs.open('.env'):
+        for line in codecs.open('.env', encoding="utf-8"):
             var = line.strip().split('=')
             if len(var) == 2:
                 os.environ[var[0]] = var[1]
