@@ -12,7 +12,7 @@ Flask_Script==2.0.6
 Flask-Mail==0.9.1
 itsdangerous==0.24
 Flask_Mail==0.9.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 Markdown==2.6.11
 python_dateutil==2.7.3
 robotframework==3.0.3
