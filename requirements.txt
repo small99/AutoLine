@@ -6,7 +6,7 @@ Flask_Login==0.2.11
 Flask==1.0.1
 Flask_RESTful==0.3.6
 Flask_SQLAlchemy==2.3.2
-requests==2.18.4
+requests==2.20.0
 SQLAlchemy==1.2.7
 Flask_Script==2.0.6
 Flask-Mail==0.9.1
